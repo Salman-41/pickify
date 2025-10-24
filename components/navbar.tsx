@@ -21,9 +21,14 @@ export function Navbar() {
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="flex items-center">
             <img
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pikify-8T0LA3AE8W1XQ1Sw5tBRTIUhODt8C6.jpeg"
+              src="/Pickify - logo.svg"
               alt="Pickify Logo"
-              className="w-10 h-10 object-contain"
+              className="h-10 w-auto object-contain"
+              style={{
+                maxWidth: "120px",
+                objectFit: "contain",
+                objectPosition: "left center",
+              }}
             />
           </Link>
 

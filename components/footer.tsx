@@ -9,9 +9,13 @@ export function Footer() {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <img
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pikify-8T0LA3AE8W1XQ1Sw5tBRTIUhODt8C6.jpeg"
+                src="/Pickify - logo.svg"
                 alt="Pickify Logo"
-                className="w-8 h-8 object-contain"
+                className="h-8 w-auto object-contain"
+                style={{
+                  maxWidth: "100px",
+                  filter: "brightness(0) invert(1)",
+                }}
               />
               <span className="font-bold text-lg">Pickify</span>
             </div>

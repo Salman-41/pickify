@@ -1,28 +1,63 @@
-import type React from "react"
-import type { Metadata } from "next"
+import type React from "react";
+import type { Metadata } from "next";
 
-import { Analytics } from "@vercel/analytics/next"
-import { Navbar } from "@/components/navbar"
-import { Footer } from "@/components/footer"
-import "./globals.css"
+import { Analytics } from "@vercel/analytics/next";
+import { Navbar } from "@/components/navbar";
+import { Footer } from "@/components/footer";
+import "./globals.css";
 
-import { Geist, Geist_Mono, Geist as V0_Font_Geist, Geist_Mono as V0_Font_Geist_Mono, Source_Serif_4 as V0_Font_Source_Serif_4 } from 'next/font/google'
+import {
+  Geist,
+  Geist_Mono,
+  Geist as V0_Font_Geist,
+  Geist_Mono as V0_Font_Geist_Mono,
+  Source_Serif_4 as V0_Font_Source_Serif_4,
+} from "next/font/google";
 
 // Initialize fonts
-const _geist = V0_Font_Geist({ subsets: ['latin'], weight: ["100","200","300","400","500","600","700","800","900"] })
-const _geistMono = V0_Font_Geist_Mono({ subsets: ['latin'], weight: ["100","200","300","400","500","600","700","800","900"] })
-const _sourceSerif_4 = V0_Font_Source_Serif_4({ subsets: ['latin'], weight: ["200","300","400","500","600","700","800","900"] })
+const _geist = V0_Font_Geist({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+});
+const _geistMono = V0_Font_Geist_Mono({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+});
+const _sourceSerif_4 = V0_Font_Source_Serif_4({
+  subsets: ["latin"],
+  weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
+});
 
 export const metadata: Metadata = {
   title: "Pickify - Premium Shopify Design & Development",
-  description: "Transform your Shopify store with premium design and development services",
+  description:
+    "Transform your Shopify store with premium design and development services",
   generator: "v0.app",
-}
+  icons: {
+    icon: [
+      { url: "/favicon/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon/favicon.ico" },
+    ],
+    apple: "/favicon/apple-touch-icon.png",
+    other: [
+      {
+        rel: "android-chrome-192x192",
+        url: "/favicon/android-chrome-192x192.png",
+      },
+      {
+        rel: "android-chrome-512x512",
+        url: "/favicon/android-chrome-512x512.png",
+      },
+    ],
+  },
+  manifest: "/favicon/site.webmanifest",
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="en">
@@ -33,5 +68,5 @@ export default function RootLayout({
         <Analytics />
       </body>
     </html>
-  )
+  );
 }
