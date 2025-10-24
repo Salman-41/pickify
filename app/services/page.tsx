@@ -1,13 +1,21 @@
-import { GradientAccent } from "@/components/gradient-accent"
-import { ServiceCard } from "@/components/service-card"
-import { CTASection } from "@/components/cta-section"
-import { Palette, Code, TrendingUp, Zap, ShoppingCart, BarChart3 } from "lucide-react"
+import { ServiceCard } from "@/components/service-card";
+import { CTASection } from "@/components/cta-section";
+import {
+  Palette,
+  Code,
+  TrendingUp,
+  Zap,
+  ShoppingCart,
+  BarChart3,
+  Sparkles,
+} from "lucide-react";
 
 const services = [
   {
     icon: Palette,
     title: "Store Design",
-    description: "Custom Shopify store designs that convert visitors into customers",
+    description:
+      "Custom Shopify store designs that convert visitors into customers",
     features: [
       "Custom homepage design",
       "Product page optimization",
@@ -33,7 +41,8 @@ const services = [
   {
     icon: TrendingUp,
     title: "Conversion Optimization",
-    description: "Data-driven strategies to increase sales and customer lifetime value",
+    description:
+      "Data-driven strategies to increase sales and customer lifetime value",
     features: [
       "Conversion rate analysis",
       "A/B testing setup",
@@ -82,37 +91,60 @@ const services = [
       "ROI analysis",
     ],
   },
-]
+];
 
 export default function ServicesPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden pt-20">
-        <GradientAccent />
+      <section
+        className="relative py-20 pt-28 overflow-hidden"
+        style={{
+          background:
+            "linear-gradient(180deg, rgba(171, 38, 69, 0.02) 0%, rgba(255, 255, 255, 1) 100%)",
+        }}
+      >
+        {/* Decorative gradient orbs */}
+        <div
+          className="absolute top-[10%] right-[8%] w-[280px] h-[280px] rounded-full blur-3xl opacity-[0.04]"
+          style={{
+            background: "radial-gradient(circle, #ab2645 0%, transparent 70%)",
+          }}
+        />
+        <div
+          className="absolute top-[10%] left-[8%] w-[280px] h-[280px] rounded-full blur-3xl opacity-[0.04]"
+          style={{
+            background: "radial-gradient(circle, #0b464f 0%, transparent 70%)",
+          }}
+        />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-balance-custom">
-            Our{" "}
-            <span
-              style={{
-                backgroundImage: "linear-gradient(to right, #E34D78, #FF6F91)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}
-            >
-              Services
+          <div className="mb-6 inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gray-200 bg-gray-50/50">
+            <Sparkles size={14} style={{ color: "#ab2645" }} />
+            <span className="text-xs font-medium tracking-wide text-gray-700">
+              OUR SERVICES
             </span>
+          </div>
+
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-[1.1] tracking-tight">
+            <span style={{ color: "#0b464f" }}>Our</span>{" "}
+            <span style={{ color: "#ab2645" }}>Services</span>
           </h1>
-          <p className="text-xl text-foreground/60 max-w-2xl mx-auto">
-            Complete Shopify solutions designed to transform your store and maximize revenue
+          <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            Complete Shopify solutions designed to transform your store and
+            maximize revenue
           </p>
         </div>
       </section>
 
       {/* Services Grid */}
-      <section className="py-20">
+      <section
+        className="py-20"
+        style={{
+          background:
+            "linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(11, 70, 79, 0.015) 100%)",
+        }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
@@ -123,27 +155,75 @@ export default function ServicesPage() {
       </section>
 
       {/* Process Section */}
-      <section className="py-20 bg-muted">
+      <section
+        className="py-20"
+        style={{
+          background:
+            "linear-gradient(180deg, rgba(11, 70, 79, 0.015) 0%, rgba(171, 38, 69, 0.015) 100%)",
+        }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-balance-custom">Our Process</h2>
-            <p className="text-lg text-foreground/60 max-w-2xl mx-auto">
+            <h2
+              className="text-4xl md:text-5xl font-bold mb-4 text-balance-custom"
+              style={{ color: "#0b464f" }}
+            >
+              Our Process
+            </h2>
+            <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
               How we transform your Shopify store into a revenue machine
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {[
-              { step: "01", title: "Discovery", description: "We analyze your store, goals, and target audience" },
-              { step: "02", title: "Strategy", description: "Create a custom roadmap for success" },
-              { step: "03", title: "Execution", description: "Build and optimize your store" },
-              { step: "04", title: "Growth", description: "Monitor, test, and continuously improve" },
+              {
+                step: "01",
+                title: "Discovery",
+                description:
+                  "We analyze your store, goals, and target audience",
+              },
+              {
+                step: "02",
+                title: "Strategy",
+                description: "Create a custom roadmap for success",
+              },
+              {
+                step: "03",
+                title: "Execution",
+                description: "Build and optimize your store",
+              },
+              {
+                step: "04",
+                title: "Growth",
+                description: "Monitor, test, and continuously improve",
+              },
             ].map((item, index) => (
-              <div key={index} className="relative">
-                <div className="text-5xl font-bold text-primary/20 mb-4">{item.step}</div>
-                <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                <p className="text-foreground/60">{item.description}</p>
-                {index < 3 && <div className="hidden md:block absolute top-8 -right-4 text-primary/30 text-2xl">→</div>}
+              <div
+                key={index}
+                className="relative p-6 rounded-xl bg-white border border-gray-100 shadow-md"
+              >
+                <div
+                  className="text-5xl font-bold mb-4"
+                  style={{ color: "rgba(171, 38, 69, 0.2)" }}
+                >
+                  {item.step}
+                </div>
+                <h3
+                  className="text-xl font-bold mb-2"
+                  style={{ color: "#0b464f" }}
+                >
+                  {item.title}
+                </h3>
+                <p className="text-gray-600">{item.description}</p>
+                {index < 3 && (
+                  <div
+                    className="hidden md:block absolute top-8 -right-4 text-2xl"
+                    style={{ color: "rgba(171, 38, 69, 0.3)" }}
+                  >
+                    →
+                  </div>
+                )}
               </div>
             ))}
           </div>
@@ -153,5 +233,5 @@ export default function ServicesPage() {
       {/* CTA Section */}
       <CTASection />
     </>
-  )
+  );
 }
