@@ -7,17 +7,16 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div>
-            <div className="flex items-center gap-2 mb-4">
+            <div className="mb-4">
               <img
                 src="/Pickify - logo.svg"
                 alt="Pickify Logo"
-                className="h-8 w-auto object-contain"
+                className="h-12 w-auto object-contain"
                 style={{
-                  maxWidth: "100px",
+                  maxWidth: "140px",
                   filter: "brightness(0) invert(1)",
                 }}
               />
-              <span className="font-bold text-lg">Pickify</span>
             </div>
             <p className="text-white/80 text-sm">
               Premium Shopify design & development services

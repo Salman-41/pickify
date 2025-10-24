@@ -23,9 +23,9 @@ export function Navbar() {
             <img
               src="/Pickify - logo.svg"
               alt="Pickify Logo"
-              className="h-10 w-auto object-contain"
+              className="h-14 w-auto object-contain"
               style={{
-                maxWidth: "120px",
+                maxWidth: "160px",
                 objectFit: "contain",
                 objectPosition: "left center",
               }}
