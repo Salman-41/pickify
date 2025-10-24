@@ -1,4 +1,4 @@
-import { ArrowRight, Sparkles } from "lucide-react"
+import { ArrowRight, Sparkles } from "lucide-react";
 
 export function HeroSection() {
   return (
@@ -28,14 +28,15 @@ export function HeroSection() {
           </div>
 
           {/* Main headline - clean, bold, dark */}
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6 leading-[1.05] tracking-tight">
-            <span className="text-gray-900">We Design & Build</span>
-            <br />
-            <span className="text-gray-900">Shopify Stores That</span>{" "}
-            <span 
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-[1.1] tracking-tight">
+            <span className="text-gray-900">
+              We Design & Build Shopify Stores That
+            </span>{" "}
+            <span
               className="relative inline-block"
               style={{
-                backgroundImage: "linear-gradient(135deg, #E34D78 0%, #FF6F91 100%)",
+                backgroundImage:
+                  "linear-gradient(135deg, #E34D78 0%, #FF6F91 100%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
@@ -46,21 +47,22 @@ export function HeroSection() {
           </h1>
 
           {/* Subheading - simple gray text */}
-          <p className="text-lg sm:text-xl text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed">
-            Partner with award-winning designers and developers to create a high-performance Shopify experience that drives revenue and delights customers.
+          <p className="text-base sm:text-lg text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed">
+            Expert Shopify design and development that transforms your online
+            store into a revenue-generating machine. Beautiful design meets
+            high-performance code.
           </p>
 
           {/* CTA Buttons - clean, professional */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-            <button
-              className="group px-8 py-4 bg-gray-900 text-white rounded-lg font-semibold smooth-transition hover:bg-gray-800 flex items-center gap-2 shadow-sm hover:shadow-md"
-            >
+            <button className="group px-8 py-4 bg-gray-900 text-white rounded-lg font-semibold smooth-transition hover:bg-gray-800 flex items-center gap-2 shadow-sm hover:shadow-md">
               <span>Start Your Project</span>
-              <ArrowRight size={18} className="group-hover:translate-x-0.5 transition-transform" />
+              <ArrowRight
+                size={18}
+                className="group-hover:translate-x-0.5 transition-transform"
+              />
             </button>
-            <button
-              className="px-8 py-4 border-2 border-gray-200 text-gray-900 rounded-lg font-semibold smooth-transition hover:border-gray-300 hover:bg-gray-50"
-            >
+            <button className="px-8 py-4 border-2 border-gray-200 text-gray-900 rounded-lg font-semibold smooth-transition hover:border-gray-300 hover:bg-gray-50">
               View Our Work
             </button>
           </div>
@@ -91,5 +93,5 @@ export function HeroSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
