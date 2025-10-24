@@ -159,10 +159,46 @@
   }
 
   .glow-pink {
-    box-shadow: 0 0 30px rgba(227, 77, 120, 0.2);
+    box-shadow: 0 8px 32px rgba(227, 77, 120, 0.25);
   }
 
   .glow-teal {
-    box-shadow: 0 0 30px rgba(0, 183, 161, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 183, 161, 0.25);
+  }
+
+  .smooth-transition {
+    transition: all 0.3s ease;
+  }
+
+  .text-balance-custom {
+    text-wrap: balance;
+  }
+}
+
+/* Modern animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-20px) scale(1.05);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.15;
+  }
+  50% {
+    opacity: 0.25;
   }
 }

@@ -18,28 +18,61 @@ Pickify is a **Next.js 16 (App Router)** marketing website for a Shopify design 
 **Brand Colors** (defined in `app/globals.css`):
 
 ```css
---pink-primary: #e34d78
---pink-light: #ff6f91
---teal-primary: #007c83
+/* Primary Gradient: Magenta-Pink */
+--pink-primary: #E34D78
+--pink-light: #FF6F91
+
+/* Secondary Gradient: Deep Teal */
+--teal-primary: #007C83
+--teal-light: #00B7A1
+
+/* Accent Colors */
+--white-soft: #FFFFFF
+--charcoal: #222222
+--gray-cool: #555555
 ```
+
+**Gradient Usage**:
+
+- **Buttons**: Primary magenta-pink gradient (`#E34D78 → #FF6F91`)
+- **Section Dividers**: Teal gradient accents (`#007C83 → #00B7A1`)
+- **Highlight Text**: Magenta-pink gradient with text clipping
+- **Background**: Clean white/light-gray with gradient accents and soft drop shadows
 
 **Gradient Pattern** (use inline styles, NOT Tailwind classes):
 
 ```tsx
+// Magenta-Pink Gradient (Primary)
 style={{
-  background: "linear-gradient(to right, #E34D78, #FF6F91)",
+  background: "linear-gradient(135deg, #E34D78 0%, #FF6F91 100%)",
+  boxShadow: "0 8px 32px rgba(227, 77, 120, 0.25)",
+}}
+
+// Text Gradient
+style={{
+  backgroundImage: "linear-gradient(135deg, #E34D78, #FF6F91)",
   WebkitBackgroundClip: "text",
   WebkitTextFillColor: "transparent",
   backgroundClip: "text",
+}}
+
+// Teal Gradient (Secondary)
+style={{
+  background: "linear-gradient(135deg, #007C83 0%, #00B7A1 100%)",
+  boxShadow: "0 8px 32px rgba(0, 183, 161, 0.25)",
 }}
 ```
 
 **Custom Utilities** (in `globals.css`):
 
-- `.glass-effect` - Glassmorphism backgrounds
-- `.gradient-pink` / `.gradient-teal` - Brand gradients
-- `.smooth-transition` - Consistent transitions
-- `.glow-pink` / `.glow-teal` - Glow effects
+- `.glass-effect` - Glassmorphism backgrounds with backdrop blur
+- `.gradient-pink` - Magenta-pink gradient (135deg)
+- `.gradient-teal` - Deep teal gradient (135deg)
+- `.smooth-transition` - Consistent transitions (all 0.3s ease)
+- `.glow-pink` - Soft pink glow/drop shadow
+- `.glow-teal` - Soft teal glow/drop shadow
+
+**UI Style**: Glassmorphism & subtle reflections inspired by the logo design
 
 ### Import Aliases (tsconfig paths)
 
