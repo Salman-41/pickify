@@ -1,45 +1,79 @@
-import { GradientAccent } from "@/components/gradient-accent"
-import { ContactForm } from "@/components/contact-form"
+import { ContactForm } from "@/components/contact-form";
+import { Sparkles } from "lucide-react";
 
 export default function ContactPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden pt-20">
-        <GradientAccent />
+      <section
+        className="relative py-20 pt-28 overflow-hidden"
+        style={{
+          background:
+            "linear-gradient(180deg, rgba(171, 38, 69, 0.02) 0%, rgba(255, 255, 255, 1) 100%)",
+        }}
+      >
+        {/* Decorative gradient orbs */}
+        <div
+          className="absolute top-[10%] right-[8%] w-[280px] h-[280px] rounded-full blur-3xl opacity-[0.04]"
+          style={{
+            background: "radial-gradient(circle, #ab2645 0%, transparent 70%)",
+          }}
+        />
+        <div
+          className="absolute top-[10%] left-[8%] w-[280px] h-[280px] rounded-full blur-3xl opacity-[0.04]"
+          style={{
+            background: "radial-gradient(circle, #0b464f 0%, transparent 70%)",
+          }}
+        />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-balance-custom">
-            Let's Work{" "}
-            <span
-              style={{
-                backgroundImage: "linear-gradient(to right, #E34D78, #FF6F91)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}
-            >
-              Together
+          <div className="mb-6 inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gray-200 bg-gray-50/50">
+            <Sparkles size={14} style={{ color: "#ab2645" }} />
+            <span className="text-xs font-medium tracking-wide text-gray-700">
+              GET IN TOUCH
             </span>
+          </div>
+
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-[1.1] tracking-tight">
+            <span style={{ color: "#0b464f" }}>Let's Work</span>{" "}
+            <span style={{ color: "#ab2645" }}>Together</span>
           </h1>
-          <p className="text-xl text-foreground/60 max-w-2xl mx-auto">
-            Ready to transform your Shopify store? Get in touch with our team today.
+          <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            Ready to transform your Shopify store? Get in touch with our team
+            today.
           </p>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section className="py-20">
+      <section
+        className="py-20"
+        style={{
+          background:
+            "linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(11, 70, 79, 0.015) 100%)",
+        }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ContactForm />
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-muted">
+      <section
+        className="py-20"
+        style={{
+          background:
+            "linear-gradient(180deg, rgba(11, 70, 79, 0.015) 0%, rgba(171, 38, 69, 0.015) 100%)",
+        }}
+      >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4 text-balance-custom">Frequently Asked Questions</h2>
+            <h2
+              className="text-4xl font-bold mb-4 text-balance-custom"
+              style={{ color: "#0b464f" }}
+            >
+              Frequently Asked Questions
+            </h2>
           </div>
 
           <div className="space-y-6">
@@ -71,15 +105,20 @@ export default function ContactPage() {
             ].map((item, index) => (
               <div
                 key={index}
-                className="p-6 bg-white rounded-lg border border-border smooth-transition hover:border-primary"
+                className="p-6 bg-white rounded-lg border border-gray-100 smooth-transition hover:shadow-xl shadow-md"
               >
-                <h3 className="text-lg font-bold mb-3 text-foreground">{item.q}</h3>
-                <p className="text-foreground/70">{item.a}</p>
+                <h3
+                  className="text-lg font-bold mb-3"
+                  style={{ color: "#0b464f" }}
+                >
+                  {item.q}
+                </h3>
+                <p className="text-gray-600">{item.a}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
     </>
-  )
+  );
 }

@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState } from "react"
-import { Mail, Phone, MapPin } from "lucide-react"
+import { useState } from "react";
+import { Mail, Phone, MapPin } from "lucide-react";
 
 export function ContactForm() {
   const [formData, setFormData] = useState({
@@ -12,39 +12,55 @@ export function ContactForm() {
     phone: "",
     company: "",
     message: "",
-  })
-  const [submitted, setSubmitted] = useState(false)
+  });
+  const [submitted, setSubmitted] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     // Handle form submission here
-    console.log("Form submitted:", formData)
-    setSubmitted(true)
-    setTimeout(() => setSubmitted(false), 3000)
-  }
+    console.log("Form submitted:", formData);
+    setSubmitted(true);
+    setTimeout(() => setSubmitted(false), 3000);
+  };
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
       {/* Contact Information */}
       <div className="lg:col-span-1">
-        <h3 className="text-2xl font-bold mb-8">Get in Touch</h3>
+        <h3 className="text-2xl font-bold mb-8" style={{ color: "#0b464f" }}>
+          Get in Touch
+        </h3>
 
         <div className="space-y-8">
           <div className="flex gap-4">
             <div
               className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0"
-              style={{ background: "linear-gradient(to right, #E34D78, #FF6F91)" }}
+              style={{ backgroundColor: "#ab2645" }}
             >
               <Mail size={24} className="text-white" />
             </div>
             <div>
-              <p className="font-semibold mb-1">Email</p>
-              <a href="mailto:hello@pickify.com" className="text-foreground/60 hover:text-primary smooth-transition">
+              <p className="font-semibold mb-1" style={{ color: "#0b464f" }}>
+                Email
+              </p>
+              <a
+                href="mailto:hello@pickify.com"
+                className="text-gray-600 smooth-transition"
+                style={{
+                  transition: "color 0.3s ease",
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "#ab2645")}
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.color = "rgb(75, 85, 99)")
+                }
+              >
                 hello@pickify.com
               </a>
             </div>
@@ -53,13 +69,25 @@ export function ContactForm() {
           <div className="flex gap-4">
             <div
               className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0"
-              style={{ background: "linear-gradient(to right, #E34D78, #FF6F91)" }}
+              style={{ backgroundColor: "#ab2645" }}
             >
               <Phone size={24} className="text-white" />
             </div>
             <div>
-              <p className="font-semibold mb-1">Phone</p>
-              <a href="tel:+1234567890" className="text-foreground/60 hover:text-primary smooth-transition">
+              <p className="font-semibold mb-1" style={{ color: "#0b464f" }}>
+                Phone
+              </p>
+              <a
+                href="tel:+1234567890"
+                className="text-gray-600 smooth-transition"
+                style={{
+                  transition: "color 0.3s ease",
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "#ab2645")}
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.color = "rgb(75, 85, 99)")
+                }
+              >
                 +1 (234) 567-890
               </a>
             </div>
@@ -68,22 +96,26 @@ export function ContactForm() {
           <div className="flex gap-4">
             <div
               className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0"
-              style={{ background: "linear-gradient(to right, #E34D78, #FF6F91)" }}
+              style={{ backgroundColor: "#ab2645" }}
             >
               <MapPin size={24} className="text-white" />
             </div>
             <div>
-              <p className="font-semibold mb-1">Location</p>
-              <p className="text-foreground/60">San Francisco, CA</p>
+              <p className="font-semibold mb-1" style={{ color: "#0b464f" }}>
+                Location
+              </p>
+              <p className="text-gray-600">San Francisco, CA</p>
             </div>
           </div>
         </div>
 
         {/* Response Time */}
-        <div className="mt-12 p-6 bg-primary/10 rounded-lg">
-          <p className="text-sm text-foreground/70">
-            <span className="font-semibold text-primary">Average response time:</span> Within 2 hours during business
-            hours
+        <div className="mt-12 p-6 rounded-lg border border-gray-100 bg-white shadow-md">
+          <p className="text-sm text-gray-600">
+            <span className="font-semibold" style={{ color: "#ab2645" }}>
+              Average response time:
+            </span>{" "}
+            Within 2 hours during business hours
           </p>
         </div>
       </div>
@@ -93,7 +125,11 @@ export function ContactForm() {
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <label htmlFor="name" className="block text-sm font-medium mb-2">
+              <label
+                htmlFor="name"
+                className="block text-sm font-medium mb-2"
+                style={{ color: "#0b464f" }}
+              >
                 Full Name
               </label>
               <input
@@ -103,12 +139,28 @@ export function ContactForm() {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 rounded-lg border border-border bg-white smooth-transition focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+                className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-white smooth-transition focus:outline-none focus:ring-2"
+                style={{
+                  transition: "all 0.3s ease",
+                }}
+                onFocus={(e) => {
+                  e.currentTarget.style.borderColor = "#ab2645";
+                  e.currentTarget.style.boxShadow =
+                    "0 0 0 3px rgba(171, 38, 69, 0.1)";
+                }}
+                onBlur={(e) => {
+                  e.currentTarget.style.borderColor = "rgb(229, 231, 235)";
+                  e.currentTarget.style.boxShadow = "none";
+                }}
                 placeholder="Your name"
               />
             </div>
             <div>
-              <label htmlFor="email" className="block text-sm font-medium mb-2">
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium mb-2"
+                style={{ color: "#0b464f" }}
+              >
                 Email Address
               </label>
               <input
@@ -118,7 +170,19 @@ export function ContactForm() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 rounded-lg border border-border bg-white smooth-transition focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+                className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-white smooth-transition focus:outline-none focus:ring-2"
+                style={{
+                  transition: "all 0.3s ease",
+                }}
+                onFocus={(e) => {
+                  e.currentTarget.style.borderColor = "#ab2645";
+                  e.currentTarget.style.boxShadow =
+                    "0 0 0 3px rgba(171, 38, 69, 0.1)";
+                }}
+                onBlur={(e) => {
+                  e.currentTarget.style.borderColor = "rgb(229, 231, 235)";
+                  e.currentTarget.style.boxShadow = "none";
+                }}
                 placeholder="your@email.com"
               />
             </div>
@@ -126,7 +190,11 @@ export function ContactForm() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <label htmlFor="phone" className="block text-sm font-medium mb-2">
+              <label
+                htmlFor="phone"
+                className="block text-sm font-medium mb-2"
+                style={{ color: "#0b464f" }}
+              >
                 Phone Number
               </label>
               <input
@@ -135,12 +203,28 @@ export function ContactForm() {
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                className="w-full px-4 py-3 rounded-lg border border-border bg-white smooth-transition focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+                className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-white smooth-transition focus:outline-none focus:ring-2"
+                style={{
+                  transition: "all 0.3s ease",
+                }}
+                onFocus={(e) => {
+                  e.currentTarget.style.borderColor = "#ab2645";
+                  e.currentTarget.style.boxShadow =
+                    "0 0 0 3px rgba(171, 38, 69, 0.1)";
+                }}
+                onBlur={(e) => {
+                  e.currentTarget.style.borderColor = "rgb(229, 231, 235)";
+                  e.currentTarget.style.boxShadow = "none";
+                }}
                 placeholder="+1 (234) 567-890"
               />
             </div>
             <div>
-              <label htmlFor="company" className="block text-sm font-medium mb-2">
+              <label
+                htmlFor="company"
+                className="block text-sm font-medium mb-2"
+                style={{ color: "#0b464f" }}
+              >
                 Company/Store Name
               </label>
               <input
@@ -149,14 +233,30 @@ export function ContactForm() {
                 name="company"
                 value={formData.company}
                 onChange={handleChange}
-                className="w-full px-4 py-3 rounded-lg border border-border bg-white smooth-transition focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+                className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-white smooth-transition focus:outline-none focus:ring-2"
+                style={{
+                  transition: "all 0.3s ease",
+                }}
+                onFocus={(e) => {
+                  e.currentTarget.style.borderColor = "#ab2645";
+                  e.currentTarget.style.boxShadow =
+                    "0 0 0 3px rgba(171, 38, 69, 0.1)";
+                }}
+                onBlur={(e) => {
+                  e.currentTarget.style.borderColor = "rgb(229, 231, 235)";
+                  e.currentTarget.style.boxShadow = "none";
+                }}
                 placeholder="Your store name"
               />
             </div>
           </div>
 
           <div>
-            <label htmlFor="message" className="block text-sm font-medium mb-2">
+            <label
+              htmlFor="message"
+              className="block text-sm font-medium mb-2"
+              style={{ color: "#0b464f" }}
+            >
               Message
             </label>
             <textarea
@@ -166,15 +266,39 @@ export function ContactForm() {
               onChange={handleChange}
               required
               rows={6}
-              className="w-full px-4 py-3 rounded-lg border border-border bg-white smooth-transition focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 resize-none"
+              className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-white smooth-transition focus:outline-none focus:ring-2 resize-none"
+              style={{
+                transition: "all 0.3s ease",
+              }}
+              onFocus={(e) => {
+                e.currentTarget.style.borderColor = "#ab2645";
+                e.currentTarget.style.boxShadow =
+                  "0 0 0 3px rgba(171, 38, 69, 0.1)";
+              }}
+              onBlur={(e) => {
+                e.currentTarget.style.borderColor = "rgb(229, 231, 235)";
+                e.currentTarget.style.boxShadow = "none";
+              }}
               placeholder="Tell us about your project..."
             />
           </div>
 
           <button
             type="submit"
-            className="w-full px-8 py-4 text-white rounded-lg font-semibold smooth-transition hover:shadow-xl hover:scale-105"
-            style={{ background: "linear-gradient(to right, #E34D78, #FF6F91)" }}
+            className="w-full px-8 py-4 text-white rounded-lg font-semibold smooth-transition hover:shadow-xl hover:scale-[1.02]"
+            style={{
+              backgroundColor: "#ab2645",
+              transition: "all 0.3s ease",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = "scale(1.02)";
+              e.currentTarget.style.boxShadow =
+                "0 20px 25px -5px rgba(171, 38, 69, 0.3), 0 10px 10px -5px rgba(171, 38, 69, 0.2)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = "scale(1)";
+              e.currentTarget.style.boxShadow = "none";
+            }}
           >
             Send Message
           </button>
@@ -187,5 +311,5 @@ export function ContactForm() {
         </form>
       </div>
     </div>
-  )
+  );
 }
