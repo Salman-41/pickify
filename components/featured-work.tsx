@@ -1,4 +1,4 @@
-import { ArrowRight } from "lucide-react"
+import { ArrowRight } from "lucide-react";
 
 const projects = [
   {
@@ -22,16 +22,22 @@ const projects = [
     image: "/placeholder.svg?height=400&width=600",
     increase: "420%",
   },
-]
+];
 
 export function FeaturedWork() {
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-gray-50">
+    <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-balance-custom">Featured Work</h2>
-          <p className="text-lg text-foreground/60 max-w-2xl mx-auto">
-            See how we've transformed Shopify stores into high-performing sales machines
+          <h2
+            className="text-4xl md:text-5xl font-bold mb-4 text-balance-custom"
+            style={{ color: "#0b464f" }}
+          >
+            Featured Work
+          </h2>
+          <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            See how we've transformed Shopify stores into high-performing sales
+            machines
           </p>
         </div>
 
@@ -39,34 +45,38 @@ export function FeaturedWork() {
           {projects.map((project) => (
             <div
               key={project.id}
-              className="group cursor-pointer rounded-2xl overflow-hidden smooth-transition hover:shadow-2xl hover-glow"
-              style={{
-                border: "2px solid transparent",
-                backgroundImage: "linear-gradient(white, white), linear-gradient(135deg, #E34D78, #FF6F91)",
-                backgroundOrigin: "border-box",
-                backgroundClip: "padding-box, border-box",
-              }}
+              className="group cursor-pointer rounded-xl overflow-hidden smooth-transition hover:shadow-lg border-2 border-gray-100 hover:border-gray-200 bg-white"
             >
-              <div className="relative h-64 overflow-hidden bg-foreground/5">
+              <div className="relative h-64 overflow-hidden bg-gray-50">
                 <img
                   src={project.image || "/placeholder.svg"}
                   alt={project.title}
-                  className="w-full h-full object-cover smooth-transition group-hover:scale-110"
+                  className="w-full h-full object-cover smooth-transition group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 smooth-transition flex items-end p-6">
+                <div className="absolute inset-0 bg-linear-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 smooth-transition flex items-end p-6">
                   <div className="text-white">
-                    <p className="text-sm font-medium mb-2" style={{ color: "#FF6F91" }}>
+                    <p
+                      className="text-sm font-semibold mb-2"
+                      style={{ color: "#ab2645" }}
+                    >
                       +{project.increase} Conversion
                     </p>
-                    <p className="font-semibold">View Case Study</p>
+                    <p className="font-semibold flex items-center gap-1">
+                      View Case Study <ArrowRight size={16} />
+                    </p>
                   </div>
                 </div>
               </div>
               <div className="p-6 bg-white">
-                <p className="text-sm font-medium mb-2" style={{ color: "#E34D78" }}>
+                <p
+                  className="text-sm font-medium mb-2 tracking-wide"
+                  style={{ color: "#ab2645" }}
+                >
                   {project.category}
                 </p>
-                <h3 className="text-xl font-bold text-foreground">{project.title}</h3>
+                <h3 className="text-xl font-bold" style={{ color: "#0b464f" }}>
+                  {project.title}
+                </h3>
               </div>
             </div>
           ))}
@@ -74,16 +84,13 @@ export function FeaturedWork() {
 
         <div className="text-center mt-12">
           <button
-            className="px-8 py-3 border-2 text-white rounded-lg font-semibold smooth-transition flex items-center justify-center gap-2 mx-auto hover:shadow-lg"
-            style={{
-              background: "linear-gradient(to right, #E34D78, #FF6F91)",
-              borderColor: "#E34D78",
-            }}
+            className="px-8 py-4 text-white rounded-lg font-semibold smooth-transition hover:opacity-90 flex items-center justify-center gap-2 mx-auto shadow-sm hover:shadow-md"
+            style={{ backgroundColor: "#ab2645" }}
           >
             View All Projects <ArrowRight size={20} />
           </button>
         </div>
       </div>
     </section>
-  )
+  );
 }
