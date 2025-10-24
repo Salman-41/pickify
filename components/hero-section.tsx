@@ -51,9 +51,9 @@ export function HeroSection() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
             <button
               className="group px-8 py-4 text-white rounded-lg font-semibold smooth-transition hover:opacity-90 flex items-center gap-2 shadow-sm hover:shadow-md"
-              style={{ backgroundColor: "#0b464f" }}
+              style={{ backgroundColor: "#ab2645" }}
             >
-              <span>Start Your Project</span>
+              <span>Hire Us</span>
               <ArrowRight
                 size={18}
                 className="group-hover:translate-x-0.5 transition-transform"
