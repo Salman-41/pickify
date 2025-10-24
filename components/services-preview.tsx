@@ -29,7 +29,13 @@ const services = [
 
 export function ServicesPreview() {
   return (
-    <section className="py-20 bg-gray-50">
+    <section
+      className="py-20"
+      style={{
+        background:
+          "linear-gradient(180deg, rgba(171, 38, 69, 0.02) 0%, rgba(249, 250, 251, 1) 50%, rgba(171, 38, 69, 0.02) 100%)",
+      }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2

@@ -26,7 +26,13 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <section className="py-20 bg-white">
+    <section
+      className="py-20"
+      style={{
+        background:
+          "linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(171, 38, 69, 0.02) 50%, rgba(255, 255, 255, 1) 100%)",
+      }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2

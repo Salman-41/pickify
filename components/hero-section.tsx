@@ -2,18 +2,24 @@ import { ArrowRight, Sparkles } from "lucide-react";
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-white pt-20">
+    <section
+      className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-20"
+      style={{
+        background:
+          "linear-gradient(180deg, rgba(171, 38, 69, 0.03) 0%, rgba(255, 255, 255, 1) 50%, rgba(11, 70, 79, 0.03) 100%)",
+      }}
+    >
       {/* Minimal decorative elements - very subtle */}
       <div
         className="absolute top-[15%] right-[8%] w-[280px] h-[280px] rounded-full blur-3xl opacity-[0.04]"
         style={{
-          background: "radial-gradient(circle, #E34D78 0%, transparent 70%)",
+          background: "radial-gradient(circle, #ab2645 0%, transparent 70%)",
         }}
       />
       <div
         className="absolute bottom-[20%] left-[10%] w-[240px] h-[240px] rounded-full blur-3xl opacity-[0.03]"
         style={{
-          background: "radial-gradient(circle, #00B7A1 0%, transparent 70%)",
+          background: "radial-gradient(circle, #0b464f 0%, transparent 70%)",
         }}
       />
 
