@@ -17,7 +17,19 @@ export function HeroSection() {
         }}
       />
       <div
-        className="absolute bottom-[20%] left-[10%] w-[240px] h-[240px] rounded-full blur-3xl opacity-[0.03]"
+        className="absolute top-[15%] left-[8%] w-[280px] h-[280px] rounded-full blur-3xl opacity-[0.04]"
+        style={{
+          background: "radial-gradient(circle, #0b464f 0%, transparent 70%)",
+        }}
+      />
+      <div
+        className="absolute bottom-[20%] left-[10%] w-60 h-60 rounded-full blur-3xl opacity-[0.03]"
+        style={{
+          background: "radial-gradient(circle, #ab2645 0%, transparent 70%)",
+        }}
+      />
+      <div
+        className="absolute bottom-[20%] right-[10%] w-60 h-60 rounded-full blur-3xl opacity-[0.03]"
         style={{
           background: "radial-gradient(circle, #0b464f 0%, transparent 70%)",
         }}
