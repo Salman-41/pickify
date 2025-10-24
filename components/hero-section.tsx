@@ -21,7 +21,7 @@ export function HeroSection() {
         <div className="max-w-4xl mx-auto text-center">
           {/* Small badge - minimal, professional */}
           <div className="mb-8 inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gray-200 bg-gray-50/50">
-            <Sparkles size={14} style={{ color: "#E34D78" }} />
+            <Sparkles size={14} style={{ color: "#ab2645" }} />
             <span className="text-xs font-medium tracking-wide text-gray-700">
               PREMIUM SHOPIFY SOLUTIONS
             </span>
@@ -29,18 +29,12 @@ export function HeroSection() {
 
           {/* Main headline - clean, bold, dark */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-[1.1] tracking-tight">
-            <span className="text-gray-900">
+            <span style={{ color: "#0b464f" }}>
               We Design & Build Shopify Stores That
             </span>{" "}
             <span
-              className="relative inline-block"
-              style={{
-                backgroundImage:
-                  "linear-gradient(135deg, #E34D78 0%, #FF6F91 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}
+              className="relative inline-block font-bold"
+              style={{ color: "#ab2645" }}
             >
               Convert
             </span>
@@ -55,7 +49,10 @@ export function HeroSection() {
 
           {/* CTA Buttons - clean, professional */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-            <button className="group px-8 py-4 bg-gray-900 text-white rounded-lg font-semibold smooth-transition hover:bg-gray-800 flex items-center gap-2 shadow-sm hover:shadow-md">
+            <button
+              className="group px-8 py-4 text-white rounded-lg font-semibold smooth-transition hover:opacity-90 flex items-center gap-2 shadow-sm hover:shadow-md"
+              style={{ backgroundColor: "#0b464f" }}
+            >
               <span>Start Your Project</span>
               <ArrowRight
                 size={18}
@@ -70,9 +67,9 @@ export function HeroSection() {
           {/* Stats - clean cards with subtle styling */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
             {[
-              { number: "150+", label: "Stores Launched", color: "#E34D78" },
-              { number: "$50M+", label: "Revenue Generated", color: "#00B7A1" },
-              { number: "98%", label: "Client Satisfaction", color: "#E34D78" },
+              { number: "150+", label: "Stores Launched", color: "#ab2645" },
+              { number: "$50M+", label: "Revenue Generated", color: "#0b464f" },
+              { number: "98%", label: "Client Satisfaction", color: "#ab2645" },
             ].map((stat, index) => (
               <div
                 key={index}
