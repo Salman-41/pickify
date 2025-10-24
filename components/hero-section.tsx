@@ -59,13 +59,19 @@ export function HeroSection() {
               className="group px-8 py-4 text-white rounded-lg font-semibold smooth-transition hover:opacity-90 flex items-center gap-2 shadow-sm hover:shadow-md"
               style={{ backgroundColor: "#ab2645" }}
             >
-              <span>Hire Us</span>
+              <span>Get Started</span>
               <ArrowRight
                 size={18}
                 className="group-hover:translate-x-0.5 transition-transform"
               />
             </button>
-            <button className="px-8 py-4 border-2 border-gray-200 text-gray-900 rounded-lg font-semibold smooth-transition hover:border-gray-300 hover:bg-gray-50">
+            <button
+              className="px-8 py-4 border-2 rounded-lg font-semibold smooth-transition hover:shadow-md flex items-center gap-2"
+              style={{
+                borderColor: "#0b464f",
+                color: "#0b464f",
+              }}
+            >
               View Our Work
             </button>
           </div>
