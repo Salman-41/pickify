@@ -6,7 +6,7 @@ export function CTASection() {
       className="py-20"
       style={{
         background:
-          "linear-gradient(180deg, rgba(11, 70, 79, 0.02) 0%, rgba(249, 250, 251, 1) 50%, rgba(11, 70, 79, 0.02) 100%)",
+          "linear-gradient(180deg, rgba(11, 70, 79, 0.02) 0%, rgba(171, 38, 69, 0.015) 100%)",
       }}
     >
       <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

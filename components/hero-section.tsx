@@ -6,7 +6,7 @@ export function HeroSection() {
       className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-20"
       style={{
         background:
-          "linear-gradient(180deg, rgba(171, 38, 69, 0.03) 0%, rgba(255, 255, 255, 1) 50%, rgba(11, 70, 79, 0.03) 100%)",
+          "linear-gradient(180deg, rgba(171, 38, 69, 0.02) 0%, rgba(255, 255, 255, 1) 100%)",
       }}
     >
       {/* Minimal decorative elements - very subtle */}
@@ -77,10 +77,7 @@ export function HeroSection() {
               { number: "$50M+", label: "Revenue Generated", color: "#0b464f" },
               { number: "98%", label: "Client Satisfaction", color: "#ab2645" },
             ].map((stat, index) => (
-              <div
-                key={index}
-                className="p-6 rounded-xl border border-gray-100 bg-white smooth-transition hover:border-gray-200 hover:shadow-sm"
-              >
+              <div key={index} className="p-6 rounded-xl smooth-transition">
                 <div
                   className="text-4xl font-bold mb-2"
                   style={{ color: stat.color }}

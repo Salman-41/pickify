@@ -30,7 +30,7 @@ export function Testimonials() {
       className="py-20"
       style={{
         background:
-          "linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(171, 38, 69, 0.02) 50%, rgba(255, 255, 255, 1) 100%)",
+          "linear-gradient(180deg, rgba(171, 38, 69, 0.015) 0%, rgba(11, 70, 79, 0.02) 100%)",
       }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -51,7 +51,7 @@ export function Testimonials() {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="p-8 rounded-xl bg-gray-50 border-2 border-gray-100 smooth-transition hover:shadow-lg hover:border-gray-200"
+              className="p-8 rounded-xl bg-gray-50 border border-gray-100 smooth-transition hover:shadow-xl hover:border-gray-200 shadow-md"
             >
               <div className="flex gap-1 mb-4">
                 {Array.from({ length: testimonial.rating }).map((_, i) => (

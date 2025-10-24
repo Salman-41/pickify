@@ -33,7 +33,7 @@ export function ServicesPreview() {
       className="py-20"
       style={{
         background:
-          "linear-gradient(180deg, rgba(171, 38, 69, 0.02) 0%, rgba(249, 250, 251, 1) 50%, rgba(171, 38, 69, 0.02) 100%)",
+          "linear-gradient(180deg, rgba(11, 70, 79, 0.015) 0%, rgba(171, 38, 69, 0.015) 100%)",
       }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -56,7 +56,7 @@ export function ServicesPreview() {
             return (
               <div
                 key={index}
-                className="p-6 rounded-xl bg-white border-2 border-gray-100 smooth-transition hover:shadow-lg hover:border-gray-200"
+                className="p-6 rounded-xl bg-white border border-gray-100 smooth-transition hover:shadow-xl hover:border-gray-200 shadow-md"
               >
                 <div
                   className="w-12 h-12 rounded-lg flex items-center justify-center mb-4 shadow-sm"

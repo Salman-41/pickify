@@ -30,7 +30,7 @@ export function FeaturedWork() {
       className="py-20"
       style={{
         background:
-          "linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(11, 70, 79, 0.02) 50%, rgba(255, 255, 255, 1) 100%)",
+          "linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(11, 70, 79, 0.015) 100%)",
       }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -51,7 +51,7 @@ export function FeaturedWork() {
           {projects.map((project) => (
             <div
               key={project.id}
-              className="group cursor-pointer rounded-xl overflow-hidden smooth-transition hover:shadow-lg border-2 border-gray-100 hover:border-gray-200 bg-white"
+              className="group cursor-pointer rounded-xl overflow-hidden smooth-transition hover:shadow-xl border border-gray-100 hover:border-gray-200 bg-white shadow-md"
             >
               <div className="relative h-64 overflow-hidden bg-gray-50">
                 <img
