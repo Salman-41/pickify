@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
+import { ClickSpark } from "@/components/click-spark";
 import "./globals.css";
 
 import {
@@ -91,6 +92,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`font-sans antialiased`}>
+        <ClickSpark />
         <Navbar />
         <main className="pt-16">{children}</main>
         <Footer />
