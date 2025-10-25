@@ -21,13 +21,13 @@ interface Spark {
 }
 
 export function ClickSpark({
-  sparkColor = "#d34D78",
-  sparkSize = 7,
+  sparkColor = "#0b464f",
+  sparkSize = 6,
   sparkRadius = 15,
-  sparkCount = 8,
+  sparkCount = 10,
   duration = 400,
   easing = "ease-out",
-  extraScale = 1.1,
+  extraScale = 1.5,
   children,
 }: ClickSparkProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -121,13 +121,6 @@ export function ClickSpark({
         ctx.moveTo(x1, y1);
         ctx.lineTo(x2, y2);
         ctx.stroke();
-
-        // small origin dot for visibility
-        ctx.fillStyle = sparkColor;
-        ctx.beginPath();
-        ctx.arc(spark.x, spark.y, Math.max(1, sparkSize / 4), 0, Math.PI * 2);
-        ctx.fill();
-
         return true;
       });
 
@@ -149,11 +142,10 @@ export function ClickSpark({
     sparkRadius,
     sparkCount,
     duration,
-    easeFunc,
     extraScale,
+    easing,
   ]);
 
-  // Attach global click handler to document so overlay does not block interactions
   useEffect(() => {
     const handleClick = (e: MouseEvent) => {
       const canvas = canvasRef.current;
@@ -176,7 +168,6 @@ export function ClickSpark({
   }, [sparkCount]);
 
   return (
-    // parent needs to receive clicks; canvas will not block them because it's pointer-events:none
     <div
       className="fixed inset-0"
       style={{ zIndex: 9999, pointerEvents: "none" }}
