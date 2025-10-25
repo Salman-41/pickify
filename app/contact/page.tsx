@@ -1,5 +1,8 @@
+"use client";
+
 import { ContactForm } from "@/components/contact-form";
 import { Sparkles } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function ContactPage() {
   return (
@@ -27,21 +30,36 @@ export default function ContactPage() {
         />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="mb-4 sm:mb-6 inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full border border-gray-200 bg-gray-50/50">
+          <motion.div
+            className="mb-4 sm:mb-6 inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full border border-gray-200 bg-gray-50/50"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          >
             <Sparkles size={14} style={{ color: "#ab2645" }} />
             <span className="text-[10px] sm:text-xs font-medium tracking-wide text-gray-700">
               GET IN TOUCH
             </span>
-          </div>
+          </motion.div>
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-[1.15] sm:leading-[1.1] tracking-tight px-2">
+          <motion.h1
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-[1.15] sm:leading-[1.1] tracking-tight px-2"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+          >
             <span style={{ color: "#0b464f" }}>Let's Work</span>{" "}
             <span style={{ color: "#ab2645" }}>Together</span>
-          </h1>
-          <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed px-4">
+          </motion.h1>
+          <motion.p
+            className="text-sm sm:text-base md:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed px-4"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+          >
             Ready to transform your Shopify store? Get in touch with our team
             today.
-          </p>
+          </motion.p>
         </div>
       </section>
 
@@ -67,14 +85,20 @@ export default function ContactPage() {
         }}
       >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10 sm:mb-12 md:mb-16">
+          <motion.div
+            className="text-center mb-10 sm:mb-12 md:mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          >
             <h2
               className="text-3xl sm:text-4xl font-bold mb-3 sm:mb-4 text-balance-custom px-2"
               style={{ color: "#0b464f" }}
             >
               Frequently Asked Questions
             </h2>
-          </div>
+          </motion.div>
 
           <div className="space-y-4 sm:space-y-6">
             {[
@@ -103,9 +127,18 @@ export default function ContactPage() {
                 a: "Yes! We offer maintenance and support packages to keep your store running smoothly and continuously optimized.",
               },
             ].map((item, index) => (
-              <div
+              <motion.div
                 key={index}
                 className="p-4 sm:p-5 md:p-6 bg-white rounded-lg border border-gray-100 smooth-transition hover:shadow-xl shadow-md"
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-30px", amount: 0.4 }}
+                transition={{
+                  duration: 0.4,
+                  delay: index * 0.08,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                whileHover={{ y: -3, transition: { duration: 0.2 } }}
               >
                 <h3
                   className="text-base sm:text-lg font-bold mb-2 sm:mb-3"
@@ -114,7 +147,7 @@ export default function ContactPage() {
                   {item.q}
                 </h3>
                 <p className="text-sm sm:text-base text-gray-600">{item.a}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
