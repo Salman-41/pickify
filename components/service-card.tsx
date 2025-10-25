@@ -16,24 +16,30 @@ export function ServiceCard({
   price,
 }: ServiceCardProps) {
   return (
-    <div className="group p-8 rounded-xl border border-gray-100 smooth-transition hover:shadow-xl bg-white shadow-md">
+    <div className="group p-5 sm:p-6 md:p-8 rounded-xl border border-gray-100 smooth-transition hover:shadow-xl bg-white shadow-md active:scale-[0.98]">
       <div
-        className="w-14 h-14 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 smooth-transition shadow-sm"
+        className="w-12 h-12 sm:w-14 sm:h-14 rounded-lg flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 smooth-transition shadow-sm"
         style={{ backgroundColor: "#ab2645" }}
       >
-        <Icon size={28} className="text-white" />
+        <Icon size={24} className="sm:hidden text-white" />
+        <Icon size={28} className="hidden sm:block text-white" />
       </div>
 
-      <h3 className="text-2xl font-bold mb-3" style={{ color: "#0b464f" }}>
+      <h3
+        className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3"
+        style={{ color: "#0b464f" }}
+      >
         {title}
       </h3>
-      <p className="text-gray-600 mb-6">{description}</p>
+      <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6">
+        {description}
+      </p>
 
-      <ul className="space-y-3 mb-8">
+      <ul className="space-y-2 sm:space-y-3 mb-6 sm:mb-8">
         {features.map((feature, index) => (
-          <li key={index} className="flex items-start gap-3">
+          <li key={index} className="flex items-start gap-2 sm:gap-3">
             <div
-              className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
+              className="w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5"
               style={{ backgroundColor: "rgba(171, 38, 69, 0.2)" }}
             >
               <div
@@ -41,19 +47,24 @@ export function ServiceCard({
                 style={{ backgroundColor: "#ab2645" }}
               />
             </div>
-            <span className="text-gray-700">{feature}</span>
+            <span className="text-sm sm:text-base text-gray-700">
+              {feature}
+            </span>
           </li>
         ))}
       </ul>
 
       {price && (
-        <div className="text-2xl font-bold mb-6" style={{ color: "#ab2645" }}>
+        <div
+          className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6"
+          style={{ color: "#ab2645" }}
+        >
           {price}
         </div>
       )}
 
       <button
-        className="w-full px-6 py-3 border-2 rounded-lg font-semibold smooth-transition hover:shadow-md"
+        className="w-full min-h-12 px-6 py-3 border-2 rounded-lg text-sm sm:text-base font-semibold smooth-transition hover:shadow-md active:scale-95"
         style={{
           borderColor: "#0b464f",
           color: "#0b464f",

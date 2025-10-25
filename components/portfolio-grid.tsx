@@ -66,12 +66,12 @@ export function PortfolioGrid() {
   return (
     <div>
       {/* Filter Buttons */}
-      <div className="flex flex-wrap gap-3 justify-center mb-12">
+      <div className="flex flex-wrap gap-2 sm:gap-3 justify-center mb-8 sm:mb-10 md:mb-12 px-2">
         {categories.map((category) => (
           <button
             key={category}
             onClick={() => setActiveCategory(category)}
-            className={`px-6 py-2 rounded-lg font-semibold smooth-transition ${
+            className={`px-4 sm:px-6 py-2 min-h-10 sm:min-h-12 rounded-lg text-sm sm:text-base font-semibold smooth-transition active:scale-95 ${
               activeCategory === category
                 ? "text-white shadow-md"
                 : "border-2 hover:shadow-md"
@@ -88,27 +88,32 @@ export function PortfolioGrid() {
       </div>
 
       {/* Portfolio Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
         {filteredItems.map((item) => (
           <div
             key={item.id}
-            className="group cursor-pointer rounded-xl overflow-hidden smooth-transition hover:shadow-xl border border-gray-100 bg-white shadow-md"
+            className="group cursor-pointer rounded-xl overflow-hidden smooth-transition hover:shadow-xl border border-gray-100 bg-white shadow-md active:scale-[0.98]"
           >
-            <div className="relative h-80 overflow-hidden bg-gray-50">
+            <div className="relative h-64 sm:h-72 md:h-80 overflow-hidden bg-gray-50">
               <img
                 src={item.image || "/placeholder.svg"}
                 alt={item.title}
                 className="w-full h-full object-cover smooth-transition group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 smooth-transition flex flex-col justify-end p-6">
-                <p className="font-semibold mb-2" style={{ color: "#ab2645" }}>
+              <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 smooth-transition flex flex-col justify-end p-4 sm:p-5 md:p-6">
+                <p
+                  className="text-xs sm:text-sm font-semibold mb-1 sm:mb-2"
+                  style={{ color: "#ab2645" }}
+                >
                   {item.category}
                 </p>
-                <h3 className="text-white text-xl font-bold mb-2">
+                <h3 className="text-white text-base sm:text-lg md:text-xl font-bold mb-1 sm:mb-2">
                   {item.title}
                 </h3>
-                <p className="text-white/80 text-sm mb-4">{item.description}</p>
-                <div className="flex gap-4 text-sm">
+                <p className="text-white/80 text-xs sm:text-sm mb-3 sm:mb-4">
+                  {item.description}
+                </p>
+                <div className="flex gap-3 sm:gap-4 text-xs sm:text-sm">
                   <div>
                     <p className="font-semibold" style={{ color: "#ab2645" }}>
                       {item.metrics.conversion}
@@ -124,14 +129,17 @@ export function PortfolioGrid() {
                 </div>
               </div>
             </div>
-            <div className="p-6 bg-white">
+            <div className="p-4 sm:p-5 md:p-6 bg-white">
               <p
-                className="text-sm font-medium mb-2 tracking-wide"
+                className="text-xs sm:text-sm font-medium mb-1 sm:mb-2 tracking-wide"
                 style={{ color: "#ab2645" }}
               >
                 {item.category}
               </p>
-              <h3 className="text-lg font-bold" style={{ color: "#0b464f" }}>
+              <h3
+                className="text-base sm:text-lg font-bold"
+                style={{ color: "#0b464f" }}
+              >
                 {item.title}
               </h3>
             </div>
