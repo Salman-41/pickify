@@ -3,6 +3,22 @@
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
+/**
+ * Call-to-action section component.
+ * 
+ * Features:
+ * - Centered content layout
+ * - Animated entrance on scroll
+ * - Gradient background
+ * - Primary CTA button with hover effects
+ * - Responsive typography
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <CTASection />
+ * ```
+ */
 export function CTASection() {
   return (
     <section

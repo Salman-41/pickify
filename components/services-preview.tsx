@@ -3,6 +3,10 @@
 import { Palette, Code, TrendingUp, Zap } from "lucide-react";
 import { motion } from "framer-motion";
 
+/**
+ * Service data for the services preview section.
+ * @internal
+ */
 const services = [
   {
     icon: Palette,
@@ -30,6 +34,22 @@ const services = [
   },
 ];
 
+/**
+ * Services preview section for the homepage.
+ * 
+ * Features:
+ * - Grid of service cards with icons
+ * - Animated card entrances
+ * - Alternating icon background colors
+ * - Hover effects with card lift and icon rotation
+ * - Responsive layout
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <ServicesPreview />
+ * ```
+ */
 export function ServicesPreview() {
   return (
     <section

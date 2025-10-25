@@ -1,6 +1,23 @@
 import Link from "next/link";
 import { Mail, Linkedin, Twitter } from "lucide-react";
 
+/**
+ * Footer component with site navigation and social links.
+ * 
+ * Features:
+ * - Brand logo with white filter
+ * - Quick links to main pages
+ * - Services links
+ * - Social media icons
+ * - Copyright and legal links
+ * - Responsive grid layout
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <Footer />
+ * ```
+ */
 export function Footer() {
   return (
     <footer

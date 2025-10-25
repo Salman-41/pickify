@@ -13,7 +13,26 @@ import {
   Sparkles,
 } from "lucide-react";
 
-const services = [
+/**
+ * Service offering data structure.
+ * @internal
+ */
+interface Service {
+  /** Icon component from lucide-react */
+  icon: typeof Palette;
+  /** Service title */
+  title: string;
+  /** Service description */
+  description: string;
+  /** List of included features */
+  features: string[];
+}
+
+/**
+ * Available services data.
+ * @internal
+ */
+const services: Service[] = [
   {
     icon: Palette,
     title: "Store Design",
@@ -96,6 +115,17 @@ const services = [
   },
 ];
 
+/**
+ * Services page component.
+ * 
+ * Displays:
+ * - Hero section with page title
+ * - Grid of service cards
+ * - Process timeline (Discovery, Strategy, Execution, Growth)
+ * - Call-to-action section
+ * 
+ * @page
+ */
 export default function ServicesPage() {
   return (
     <>

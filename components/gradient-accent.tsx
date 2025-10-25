@@ -1,3 +1,19 @@
+/**
+ * Gradient accent decorative component.
+ * 
+ * Adds floating gradient orbs to sections for visual interest.
+ * Uses absolute positioning and is pointer-events-none to avoid
+ * interfering with user interactions.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <section className="relative">
+ *   <GradientAccent />
+ *   {/* Your content *\/}
+ * </section>
+ * ```
+ */
 export function GradientAccent() {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">

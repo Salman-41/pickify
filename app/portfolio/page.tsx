@@ -2,6 +2,16 @@ import { PortfolioGrid } from "@/components/portfolio-grid";
 import { CTASection } from "@/components/cta-section";
 import { Sparkles } from "lucide-react";
 
+/**
+ * Portfolio page component.
+ * 
+ * Displays:
+ * - Hero section with page title
+ * - Filterable portfolio grid
+ * - Call-to-action section
+ * 
+ * @page
+ */
 export default function PortfolioPage() {
   return (
     <>

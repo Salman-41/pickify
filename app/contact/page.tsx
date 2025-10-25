@@ -4,6 +4,27 @@ import { ContactForm } from "@/components/contact-form";
 import { Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 
+/**
+ * FAQ item data structure.
+ * @internal
+ */
+interface FAQItem {
+  /** Question text */
+  q: string;
+  /** Answer text */
+  a: string;
+}
+
+/**
+ * Contact page component.
+ * 
+ * Displays:
+ * - Hero section with page title
+ * - Contact form with contact information
+ * - FAQ section with common questions
+ * 
+ * @page
+ */
 export default function ContactPage() {
   return (
     <>

@@ -6,6 +6,21 @@ import { useState } from "react";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
 
+/**
+ * Contact form component with contact information and form inputs.
+ * 
+ * Features:
+ * - Animated contact information cards with icons
+ * - Form with validation and focus states
+ * - Success message display
+ * - Responsive design for mobile and desktop
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <ContactForm />
+ * ```
+ */
 export function ContactForm() {
   const [formData, setFormData] = useState({
     name: "",
@@ -25,8 +40,6 @@ export function ContactForm() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log("Form submitted:", formData);
     setSubmitted(true);
     setTimeout(() => setSubmitted(false), 3000);
   };

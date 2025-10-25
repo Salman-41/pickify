@@ -14,20 +14,36 @@ import {
   Source_Serif_4 as V0_Font_Source_Serif_4,
 } from "next/font/google";
 
-// Initialize fonts
+/**
+ * Geist font configuration for body text.
+ * @see https://vercel.com/font
+ */
 const _geist = V0_Font_Geist({
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
+
+/**
+ * Geist Mono font configuration for monospace text.
+ * @see https://vercel.com/font
+ */
 const _geistMono = V0_Font_Geist_Mono({
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
+
+/**
+ * Source Serif 4 font configuration for serif headings.
+ * @see https://fonts.google.com/specimen/Source+Serif+4
+ */
 const _sourceSerif_4 = V0_Font_Source_Serif_4({
   subsets: ["latin"],
   weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
+/**
+ * Site metadata configuration for SEO.
+ */
 export const metadata: Metadata = {
   title: "Pickify - Premium Shopify Design & Development",
   description:
@@ -54,6 +70,19 @@ export const metadata: Metadata = {
   manifest: "/favicon/site.webmanifest",
 };
 
+/**
+ * Root layout component.
+ * 
+ * Provides:
+ * - HTML structure with font configuration
+ * - Fixed navbar
+ * - Main content area with top padding
+ * - Footer
+ * - Vercel Analytics integration
+ * 
+ * @param props - Component props
+ * @param props.children - Page content
+ */
 export default function RootLayout({
   children,
 }: Readonly<{

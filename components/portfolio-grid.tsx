@@ -3,7 +3,35 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const portfolioItems = [
+/**
+ * Portfolio item data structure.
+ * @internal
+ */
+interface PortfolioItem {
+  /** Unique item ID */
+  id: number;
+  /** Project title */
+  title: string;
+  /** Project category */
+  category: string;
+  /** Project image URL */
+  image: string;
+  /** Project description */
+  description: string;
+  /** Performance metrics */
+  metrics: {
+    /** Conversion rate increase */
+    conversion: string;
+    /** Average order value increase */
+    aov: string;
+  };
+}
+
+/**
+ * Portfolio projects data.
+ * @internal
+ */
+const portfolioItems: PortfolioItem[] = [
   {
     id: 1,
     title: "Luxury Fashion Brand",
@@ -54,8 +82,28 @@ const portfolioItems = [
   },
 ];
 
+/**
+ * Available portfolio filter categories.
+ * @internal
+ */
 const categories = ["All", "Design", "Development", "Optimization"];
 
+/**
+ * Portfolio grid component with filtering.
+ * 
+ * Features:
+ * - Category filter buttons
+ * - Animated grid layout
+ * - Project cards with hover overlays
+ * - Performance metrics display
+ * - Smooth transitions when filtering
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <PortfolioGrid />
+ * ```
+ */
 export function PortfolioGrid() {
   const [activeCategory, setActiveCategory] = useState("All");
 

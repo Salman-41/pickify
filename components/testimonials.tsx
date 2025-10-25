@@ -3,7 +3,26 @@
 import { Star } from "lucide-react";
 import { motion } from "framer-motion";
 
-const testimonials = [
+/**
+ * Testimonial data structure.
+ * @internal
+ */
+interface Testimonial {
+  /** Client name */
+  name: string;
+  /** Client role/position */
+  role: string;
+  /** Testimonial content */
+  content: string;
+  /** Star rating (1-5) */
+  rating: number;
+}
+
+/**
+ * Client testimonials data.
+ * @internal
+ */
+const testimonials: Testimonial[] = [
   {
     name: "Sarah Chen",
     role: "Founder, Luxe Essentials",
@@ -27,6 +46,22 @@ const testimonials = [
   },
 ];
 
+/**
+ * Testimonials section component.
+ * 
+ * Features:
+ * - Grid of client testimonial cards
+ * - Star ratings display
+ * - Animated card entrances on scroll
+ * - Hover effects with card lift
+ * - Responsive grid layout
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <Testimonials />
+ * ```
+ */
 export function Testimonials() {
   return (
     <section

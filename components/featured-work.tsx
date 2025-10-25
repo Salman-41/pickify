@@ -3,6 +3,10 @@
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
+/**
+ * Project data for featured work showcase.
+ * @internal
+ */
 const projects = [
   {
     id: 1,
@@ -27,6 +31,22 @@ const projects = [
   },
 ];
 
+/**
+ * Featured work section showcasing portfolio projects.
+ * 
+ * Features:
+ * - Grid layout of project cards
+ * - Hover effects revealing conversion metrics
+ * - Animated card-by-card entrance
+ * - Category labels and project titles
+ * - "View All Projects" call-to-action button
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <FeaturedWork />
+ * ```
+ */
 export function FeaturedWork() {
   return (
     <section

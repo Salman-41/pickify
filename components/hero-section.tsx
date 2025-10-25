@@ -3,6 +3,22 @@
 import { ArrowRight, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 
+/**
+ * Hero section component for the homepage.
+ * 
+ * Features:
+ * - Animated gradient orbs floating in the background
+ * - Premium badge with sparkles icon
+ * - Main headline with brand colors
+ * - Call-to-action buttons with hover effects
+ * - Statistics cards with hover animations
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <HeroSection />
+ * ```
+ */
 export function HeroSection() {
   return (
     <section

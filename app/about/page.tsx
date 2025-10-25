@@ -4,6 +4,19 @@ import { CTASection } from "@/components/cta-section";
 import { Award, Users, Zap, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 
+/**
+ * About page component.
+ * 
+ * Displays:
+ * - Hero section with page title
+ * - Company story section with highlighted metrics
+ * - Core values cards
+ * - Team member profiles
+ * - Statistics section
+ * - Call-to-action section
+ * 
+ * @page
+ */
 export default function AboutPage() {
   return (
     <>

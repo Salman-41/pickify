@@ -5,6 +5,22 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
+/**
+ * Fixed navigation bar component with mobile menu support.
+ * 
+ * Features:
+ * - Transparent gradient background
+ * - Responsive design with mobile hamburger menu
+ * - Animated menu transitions
+ * - Brand logo with link to home
+ * - Call-to-action "Hire Us" button
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <Navbar />
+ * ```
+ */
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 

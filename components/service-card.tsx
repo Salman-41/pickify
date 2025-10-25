@@ -1,13 +1,43 @@
 import type { LucideIcon } from "lucide-react";
 
+/**
+ * Props for the ServiceCard component.
+ */
 interface ServiceCardProps {
+  /** Icon component from lucide-react */
   icon: LucideIcon;
+  /** Service title */
   title: string;
+  /** Service description */
   description: string;
+  /** List of service features */
   features: string[];
+  /** Optional pricing information */
   price?: string;
 }
 
+/**
+ * Service card component displaying service details.
+ * 
+ * Features:
+ * - Animated icon with gradient background
+ * - Service title and description
+ * - Feature list with custom bullet points
+ * - Optional pricing display
+ * - Hover effects and transitions
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <ServiceCard
+ *   icon={Palette}
+ *   title="Store Design"
+ *   description="Custom Shopify designs"
+ *   features={["Feature 1", "Feature 2"]}
+ *   price="$5,000"
+ * />
+ * ```
+ */
 export function ServiceCard({
   icon: Icon,
   title,
