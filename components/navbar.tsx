@@ -11,9 +11,10 @@ import { motion, AnimatePresence } from "framer-motion";
  * Features:
  * - Transparent gradient background
  * - Responsive design with mobile hamburger menu
- * - Animated menu transitions
+ * - Animated menu transitions with auto-close on navigation
  * - Brand logo with link to home
  * - Call-to-action "Hire Us" button
+ * - Click-outside detection to close menu
  *
  * @component
  * @example
@@ -23,6 +24,8 @@ import { motion, AnimatePresence } from "framer-motion";
  */
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+
+  const closeMenu = () => setIsOpen(false);
 
   const links = [
     { href: "/", label: "Home" },
@@ -102,54 +105,77 @@ export function Navbar() {
         {/* Mobile Menu */}
         <AnimatePresence>
           {isOpen && (
-            <motion.div
-              className="md:hidden pb-4 space-y-2 border-t"
-              style={{
-                borderColor: "rgba(11, 70, 79, 0.1)",
-                backgroundColor: "rgba(255, 255, 255, 0.5)",
-              }}
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3 }}
-            >
-              {links.map((link, index) => (
-                <motion.div
-                  key={link.href}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.05 }}
-                >
-                  <Link
-                    href={link.href}
-                    className="block px-4 py-2 font-medium smooth-transition rounded-lg"
-                    style={{
-                      color: "#0b464f",
-                      backgroundColor: "transparent",
-                    }}
-                    onMouseEnter={(e) =>
-                      (e.currentTarget.style.backgroundColor =
-                        "rgba(171, 38, 69, 0.08)")
-                    }
-                    onMouseLeave={(e) =>
-                      (e.currentTarget.style.backgroundColor = "transparent")
-                    }
-                  >
-                    {link.label}
-                  </Link>
-                </motion.div>
-              ))}
-              <motion.button
-                className="w-full mt-4 px-6 py-3 text-white rounded-lg font-medium smooth-transition hover:opacity-90 active:scale-95"
-                style={{ backgroundColor: "#ab2645" }}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
-                whileTap={{ scale: 0.95 }}
+            <>
+              {/* Overlay - Click outside to close menu */}
+              <motion.div
+                className="fixed inset-0 md:hidden"
+                style={{
+                  backgroundColor: "rgba(0, 0, 0, 0.3)",
+                  zIndex: 40,
+                }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.2 }}
+                onClick={closeMenu}
+              />
+
+              {/* Menu Content */}
+              <motion.div
+                className="fixed left-0 right-0 md:hidden w-full bg-white/95 backdrop-blur-xl border-b shadow-lg"
+                style={{
+                  top: "64px",
+                  zIndex: 50,
+                  borderColor: "rgba(11, 70, 79, 0.1)",
+                }}
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: "auto" }}
+                exit={{ opacity: 0, height: 0 }}
+                transition={{ duration: 0.3 }}
+                onClick={(e) => e.stopPropagation()}
               >
-                Hire Us
-              </motion.button>
-            </motion.div>
+                <div className="px-4 sm:px-6 pb-4 space-y-2 pt-4">
+                  {links.map((link, index) => (
+                    <motion.div
+                      key={link.href}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.05 }}
+                    >
+                      <Link
+                        href={link.href}
+                        onClick={closeMenu}
+                        className="block px-4 py-3 font-medium smooth-transition rounded-lg"
+                        style={{
+                          color: "#0b464f",
+                        }}
+                        onMouseEnter={(e) =>
+                          (e.currentTarget.style.backgroundColor =
+                            "rgba(171, 38, 69, 0.1)")
+                        }
+                        onMouseLeave={(e) =>
+                          (e.currentTarget.style.backgroundColor =
+                            "transparent")
+                        }
+                      >
+                        {link.label}
+                      </Link>
+                    </motion.div>
+                  ))}
+                  <motion.button
+                    className="w-full mt-4 px-6 py-3 text-white rounded-lg font-medium smooth-transition hover:opacity-90 active:scale-95"
+                    style={{ backgroundColor: "#ab2645" }}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={closeMenu}
+                  >
+                    Hire Us
+                  </motion.button>
+                </div>
+              </motion.div>
+            </>
           )}
         </AnimatePresence>
       </div>
