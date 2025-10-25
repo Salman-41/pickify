@@ -2,6 +2,7 @@
 
 import { ArrowRight, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
+import { VariableProximity } from "@/components/variable-proximity";
 
 /**
  * Hero section component for the homepage.
@@ -113,27 +114,35 @@ export function HeroSection() {
             transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
           >
             <span style={{ color: "#0b464f" }}>
-              We Design & Build Shopify Stores That
-            </span>{" "}
-            <span
-              className="relative inline-block font-bold"
-              style={{ color: "#ab2645" }}
-            >
-              Convert
+              We Design & Build Shopify Stores That{" "}
+              <span style={{ color: "#ab2645" }}>
+                <VariableProximity
+                  text="Convert"
+                  className="font-bold"
+                  animationType="scale"
+                  fromScale={1}
+                  toScale={1.3}
+                  radius={120}
+                />
+              </span>
             </span>
           </motion.h1>
 
           {/* Subheading - simple gray text */}
-          <motion.p
+          <motion.div
             className="text-sm sm:text-base md:text-lg text-gray-600 mb-8 sm:mb-12 max-w-2xl mx-auto leading-relaxed px-2"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.4, ease: "easeOut" }}
           >
-            Expert Shopify design and development that transforms your online
-            store into a revenue-generating machine. Beautiful design meets
-            high-performance code.
-          </motion.p>
+            <VariableProximity
+              text="Expert Shopify design and development that transforms your online store into a revenue-generating machine. Beautiful design meets high-performance code."
+              animationType="color"
+              fromColor="#666666"
+              toColor="#ab2645"
+              radius={100}
+            />
+          </motion.div>
 
           {/* CTA Buttons - clean, professional - mobile first */}
           <motion.div
