@@ -40,15 +40,18 @@ All components and pages are now fully documented with TSDoc comments including:
 ### Components
 
 #### `<ContactForm />`
+
 **Location:** `components/contact-form.tsx`  
 **Type:** Client Component  
 **Features:**
+
 - Animated contact information cards
 - Form validation with focus states
 - Success message display
 - Responsive layout
 
 **Usage:**
+
 ```tsx
 <ContactForm />
 ```
@@ -56,15 +59,18 @@ All components and pages are now fully documented with TSDoc comments including:
 ---
 
 #### `<HeroSection />`
+
 **Location:** `components/hero-section.tsx`  
 **Type:** Client Component  
 **Features:**
+
 - Floating gradient orbs animation
 - Premium badge with icon
 - CTA buttons with hover effects
 - Statistics cards
 
 **Usage:**
+
 ```tsx
 <HeroSection />
 ```
@@ -72,15 +78,18 @@ All components and pages are now fully documented with TSDoc comments including:
 ---
 
 #### `<Navbar />`
+
 **Location:** `components/navbar.tsx`  
 **Type:** Client Component  
 **Features:**
+
 - Fixed position with transparent gradient
 - Mobile hamburger menu
 - Animated transitions
 - Logo and navigation links
 
 **Usage:**
+
 ```tsx
 <Navbar />
 ```
@@ -88,15 +97,18 @@ All components and pages are now fully documented with TSDoc comments including:
 ---
 
 #### `<Footer />`
+
 **Location:** `components/footer.tsx`  
 **Type:** Server Component  
 **Features:**
+
 - Site navigation links
 - Social media icons
 - Copyright information
 - Responsive grid layout
 
 **Usage:**
+
 ```tsx
 <Footer />
 ```
@@ -104,15 +116,18 @@ All components and pages are now fully documented with TSDoc comments including:
 ---
 
 #### `<FeaturedWork />`
+
 **Location:** `components/featured-work.tsx`  
 **Type:** Client Component  
 **Features:**
+
 - Grid of portfolio projects
 - Hover overlays with metrics
 - Staggered animations
 - View all CTA button
 
 **Usage:**
+
 ```tsx
 <FeaturedWork />
 ```
@@ -120,9 +135,11 @@ All components and pages are now fully documented with TSDoc comments including:
 ---
 
 #### `<ServiceCard />`
+
 **Location:** `components/service-card.tsx`  
 **Type:** Server Component  
 **Props:**
+
 - `icon: LucideIcon` - Icon component
 - `title: string` - Service title
 - `description: string` - Service description
@@ -130,6 +147,7 @@ All components and pages are now fully documented with TSDoc comments including:
 - `price?: string` - Optional pricing
 
 **Usage:**
+
 ```tsx
 <ServiceCard
   icon={Palette}
@@ -143,15 +161,18 @@ All components and pages are now fully documented with TSDoc comments including:
 ---
 
 #### `<ServicesPreview />`
+
 **Location:** `components/services-preview.tsx`  
 **Type:** Client Component  
 **Features:**
+
 - Grid of service cards
 - Alternating icon colors
 - Hover effects with rotation
 - Responsive layout
 
 **Usage:**
+
 ```tsx
 <ServicesPreview />
 ```
@@ -159,15 +180,18 @@ All components and pages are now fully documented with TSDoc comments including:
 ---
 
 #### `<CTASection />`
+
 **Location:** `components/cta-section.tsx`  
 **Type:** Client Component  
 **Features:**
+
 - Centered content layout
 - Animated entrance
 - Primary CTA button
 - Gradient background
 
 **Usage:**
+
 ```tsx
 <CTASection />
 ```
@@ -175,15 +199,18 @@ All components and pages are now fully documented with TSDoc comments including:
 ---
 
 #### `<GradientAccent />`
+
 **Location:** `components/gradient-accent.tsx`  
 **Type:** Server Component  
 **Features:**
+
 - Decorative floating orbs
 - Absolute positioning
 - Pointer-events-none
 - Brand gradient colors
 
 **Usage:**
+
 ```tsx
 <section className="relative">
   <GradientAccent />
@@ -194,15 +221,18 @@ All components and pages are now fully documented with TSDoc comments including:
 ---
 
 #### `<Testimonials />`
+
 **Location:** `components/testimonials.tsx`  
 **Type:** Client Component  
 **Features:**
+
 - Grid of testimonial cards
 - Star ratings
 - Hover animations
 - Responsive layout
 
 **Usage:**
+
 ```tsx
 <Testimonials />
 ```
@@ -210,15 +240,18 @@ All components and pages are now fully documented with TSDoc comments including:
 ---
 
 #### `<PortfolioGrid />`
+
 **Location:** `components/portfolio-grid.tsx`  
 **Type:** Client Component  
 **Features:**
+
 - Category filtering
 - Animated grid transitions
 - Hover overlays with metrics
 - AnimatePresence for smooth filtering
 
 **Usage:**
+
 ```tsx
 <PortfolioGrid />
 ```
@@ -228,9 +261,11 @@ All components and pages are now fully documented with TSDoc comments including:
 ### Pages
 
 #### Homepage (`/`)
+
 **Location:** `app/page.tsx`  
 **Type:** Server Component  
 **Sections:**
+
 1. Hero with CTA
 2. Featured work showcase
 3. Services preview
@@ -240,9 +275,11 @@ All components and pages are now fully documented with TSDoc comments including:
 ---
 
 #### About Page (`/about`)
+
 **Location:** `app/about/page.tsx`  
 **Type:** Client Component  
 **Sections:**
+
 1. Hero section
 2. Company story with metrics
 3. Core values
@@ -253,9 +290,11 @@ All components and pages are now fully documented with TSDoc comments including:
 ---
 
 #### Contact Page (`/contact`)
+
 **Location:** `app/contact/page.tsx`  
 **Type:** Client Component  
 **Sections:**
+
 1. Hero section
 2. Contact form
 3. FAQ section
@@ -263,9 +302,11 @@ All components and pages are now fully documented with TSDoc comments including:
 ---
 
 #### Portfolio Page (`/portfolio`)
+
 **Location:** `app/portfolio/page.tsx`  
 **Type:** Server Component  
 **Sections:**
+
 1. Hero section
 2. Filterable portfolio grid
 3. CTA section
@@ -273,9 +314,11 @@ All components and pages are now fully documented with TSDoc comments including:
 ---
 
 #### Services Page (`/services`)
+
 **Location:** `app/services/page.tsx`  
 **Type:** Client Component  
 **Sections:**
+
 1. Hero section
 2. Services grid
 3. Process timeline
@@ -286,18 +329,22 @@ All components and pages are now fully documented with TSDoc comments including:
 ### Utilities
 
 #### `cn()`
+
 **Location:** `lib/utils.ts`  
 **Purpose:** Merge Tailwind CSS classes with proper precedence
 
 **Usage:**
+
 ```tsx
 import { cn } from "@/lib/utils";
 
-<div className={cn(
-  "base-classes",
-  condition && "conditional-classes",
-  "override-classes"
-)} />
+<div
+  className={cn(
+    "base-classes",
+    condition && "conditional-classes",
+    "override-classes"
+  )}
+/>;
 ```
 
 ---
@@ -305,11 +352,13 @@ import { cn } from "@/lib/utils";
 ## Code Cleanup Summary
 
 ### Removed
+
 - ✅ Removed `console.log` from `contact-form.tsx`
 - ✅ No other console logs or debug code found
 - ✅ All components are production-ready
 
 ### Added Documentation
+
 - ✅ TSDoc comments on all components
 - ✅ TSDoc comments on all pages
 - ✅ TSDoc comments on utility functions
@@ -319,24 +368,29 @@ import { cn } from "@/lib/utils";
 ## Design System
 
 ### Brand Colors
+
 ```css
 --pink-primary: #ab2645    /* Magenta-Pink */
 --teal-primary: #0b464f    /* Deep Teal */
 ```
 
 ### Typography
+
 - **Body:** Inter (300-800 weights)
 - **Headings:** Playfair Display (400-900 weights)
 - **Code:** JetBrains Mono (400-700 weights)
 
 ### Animations
+
 - **Library:** Framer Motion v12.23.24
 - **Pattern:** `whileInView` with viewport triggers
 - **Easing:** Custom bezier `[0.22, 1, 0.36, 1]`
 - **Stagger:** 0.08-0.1s delays between elements
 
 ### Gradients
+
 All gradients use inline `style` prop (not Tailwind classes):
+
 ```tsx
 // Magenta-Pink (Primary)
 style={{
@@ -352,6 +406,7 @@ style={{
 ## Development
 
 ### Commands
+
 ```bash
 pnpm dev      # Start development server
 pnpm build    # Production build
@@ -359,11 +414,13 @@ pnpm lint     # Run ESLint
 ```
 
 ### Adding shadcn/ui Components
+
 ```bash
 npx shadcn@latest add [component-name]
 ```
 
 ### TypeScript
+
 - Strict mode enabled
 - Path alias: `@/*` maps to project root
 - `ignoreBuildErrors: true` for faster iteration
@@ -371,18 +428,21 @@ npx shadcn@latest add [component-name]
 ## Best Practices
 
 ### Component Patterns
+
 1. **Named exports:** `export function ComponentName()`
 2. **Client directive:** Only add `"use client"` when needed
 3. **Icons:** Type as `LucideIcon`, render as `<Icon />`
 4. **Responsive:** Mobile-first with sm/md/lg breakpoints
 
 ### Styling
+
 1. **Gradients:** Always use inline `style` prop
 2. **Classes:** Use `cn()` for conditional classes
 3. **Animations:** Consistent easing and timing
 4. **Typography:** Use semantic classes from `globals.css`
 
 ### Performance
+
 - Images are unoptimized in `next.config.mjs`
 - Vercel Analytics pre-configured
 - React 19 with automatic optimizations

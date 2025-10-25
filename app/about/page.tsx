@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 /**
  * About page component.
- * 
+ *
  * Displays:
  * - Hero section with page title
  * - Company story section with highlighted metrics
@@ -14,7 +14,7 @@ import { motion } from "framer-motion";
  * - Team member profiles
  * - Statistics section
  * - Call-to-action section
- * 
+ *
  * @page
  */
 export default function AboutPage() {

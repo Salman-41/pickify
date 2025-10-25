@@ -48,14 +48,14 @@ const testimonials: Testimonial[] = [
 
 /**
  * Testimonials section component.
- * 
+ *
  * Features:
  * - Grid of client testimonial cards
  * - Star ratings display
  * - Animated card entrances on scroll
  * - Hover effects with card lift
  * - Responsive grid layout
- * 
+ *
  * @component
  * @example
  * ```tsx

@@ -18,14 +18,14 @@ interface ServiceCardProps {
 
 /**
  * Service card component displaying service details.
- * 
+ *
  * Features:
  * - Animated icon with gradient background
  * - Service title and description
  * - Feature list with custom bullet points
  * - Optional pricing display
  * - Hover effects and transitions
- * 
+ *
  * @component
  * @example
  * ```tsx

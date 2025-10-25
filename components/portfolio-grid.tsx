@@ -90,14 +90,14 @@ const categories = ["All", "Design", "Development", "Optimization"];
 
 /**
  * Portfolio grid component with filtering.
- * 
+ *
  * Features:
  * - Category filter buttons
  * - Animated grid layout
  * - Project cards with hover overlays
  * - Performance metrics display
  * - Smooth transitions when filtering
- * 
+ *
  * @component
  * @example
  * ```tsx

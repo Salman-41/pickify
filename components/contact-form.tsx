@@ -8,13 +8,13 @@ import { motion } from "framer-motion";
 
 /**
  * Contact form component with contact information and form inputs.
- * 
+ *
  * Features:
  * - Animated contact information cards with icons
  * - Form with validation and focus states
  * - Success message display
  * - Responsive design for mobile and desktop
- * 
+ *
  * @component
  * @example
  * ```tsx

@@ -33,14 +33,14 @@ const projects = [
 
 /**
  * Featured work section showcasing portfolio projects.
- * 
+ *
  * Features:
  * - Grid layout of project cards
  * - Hover effects revealing conversion metrics
  * - Animated card-by-card entrance
  * - Category labels and project titles
  * - "View All Projects" call-to-action button
- * 
+ *
  * @component
  * @example
  * ```tsx

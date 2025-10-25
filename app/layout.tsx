@@ -72,14 +72,14 @@ export const metadata: Metadata = {
 
 /**
  * Root layout component.
- * 
+ *
  * Provides:
  * - HTML structure with font configuration
  * - Fixed navbar
  * - Main content area with top padding
  * - Footer
  * - Vercel Analytics integration
- * 
+ *
  * @param props - Component props
  * @param props.children - Page content
  */

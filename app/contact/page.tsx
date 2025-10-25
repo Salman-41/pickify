@@ -17,12 +17,12 @@ interface FAQItem {
 
 /**
  * Contact page component.
- * 
+ *
  * Displays:
  * - Hero section with page title
  * - Contact form with contact information
  * - FAQ section with common questions
- * 
+ *
  * @page
  */
 export default function ContactPage() {

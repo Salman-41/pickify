@@ -117,13 +117,13 @@ const services: Service[] = [
 
 /**
  * Services page component.
- * 
+ *
  * Displays:
  * - Hero section with page title
  * - Grid of service cards
  * - Process timeline (Discovery, Strategy, Execution, Growth)
  * - Call-to-action section
- * 
+ *
  * @page
  */
 export default function ServicesPage() {
