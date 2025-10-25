@@ -66,19 +66,19 @@ export function HeroSection() {
           </p>
 
           {/* CTA Buttons - clean, professional - mobile first */}
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center mb-12 sm:mb-16 px-4">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center mb-12 sm:mb-16 px-3 sm:px-4">
             <button
-              className="group w-full sm:w-auto px-6 sm:px-8 py-4 min-h-[48px] text-white rounded-lg font-semibold smooth-transition hover:opacity-90 flex items-center justify-center gap-2 shadow-sm hover:shadow-md active:scale-95"
+              className="group w-full sm:w-auto px-4 sm:px-8 py-3 sm:py-4 min-h-[48px] text-sm sm:text-base text-white rounded-lg font-semibold smooth-transition hover:opacity-90 flex items-center justify-center gap-2 shadow-sm hover:shadow-md active:scale-95"
               style={{ backgroundColor: "#ab2645" }}
             >
               <span>Get Started</span>
               <ArrowRight
-                size={18}
+                size={16}
                 className="group-hover:translate-x-0.5 transition-transform"
               />
             </button>
             <button
-              className="w-full sm:w-auto px-6 sm:px-8 py-4 min-h-[48px] border-2 rounded-lg font-semibold smooth-transition hover:shadow-md flex items-center justify-center gap-2 active:scale-95"
+              className="w-full sm:w-auto px-4 sm:px-8 py-3 sm:py-4 min-h-[48px] text-sm sm:text-base border-2 rounded-lg font-semibold smooth-transition hover:shadow-md flex items-center justify-center gap-2 active:scale-95"
               style={{
                 borderColor: "#0b464f",
                 color: "#0b464f",

@@ -61,27 +61,50 @@ export function Navbar() {
           </button>
 
           {/* Mobile Menu Button */}
-          <button onClick={() => setIsOpen(!isOpen)} className="md:hidden p-2">
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden p-2 smooth-transition hover:opacity-75"
+          >
+            {isOpen ? (
+              <X size={24} style={{ color: "#ab2645" }} />
+            ) : (
+              <Menu size={24} style={{ color: "#0b464f" }} />
+            )}
           </button>
         </div>
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden pb-4 space-y-2">
+          <div
+            className="md:hidden pb-4 space-y-2 border-t"
+            style={{
+              borderColor: "rgba(11, 70, 79, 0.1)",
+              backgroundColor: "rgba(255, 255, 255, 0.5)",
+            }}
+          >
             {links.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="block px-4 py-2 font-medium smooth-transition hover:bg-gray-50 rounded-lg"
-                style={{ color: "#0b464f" }}
+                className="block px-4 py-2 font-medium smooth-transition rounded-lg"
+                style={{
+                  color: "#0b464f",
+                  backgroundColor: "transparent",
+                }}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.backgroundColor =
+                    "rgba(171, 38, 69, 0.08)")
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.backgroundColor = "transparent")
+                }
               >
                 {link.label}
               </Link>
             ))}
             <button
-              className="w-full mt-4 px-6 py-2 text-white rounded-lg font-medium hover:opacity-90 smooth-transition"
-              style={{ backgroundColor: "#0b464f" }}
+              className="w-full mt-4 px-6 py-3 text-white rounded-lg font-medium smooth-transition hover:opacity-90 active:scale-95"
+              style={{ backgroundColor: "#ab2645" }}
             >
               Hire Us
             </button>
