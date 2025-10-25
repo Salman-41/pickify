@@ -3,6 +3,7 @@
 import { ArrowRight, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 import { VariableProximity } from "@/components/variable-proximity";
+import { CountUp } from "@/components/count-up";
 
 /**
  * Hero section component for the homepage.
@@ -179,9 +180,28 @@ export function HeroSection() {
           {/* Stats - clean cards with subtle styling */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 max-w-3xl mx-auto px-4">
             {[
-              { number: "150+", label: "Stores Launched", color: "#ab2645" },
-              { number: "$50M+", label: "Revenue Generated", color: "#0b464f" },
-              { number: "98%", label: "Client Satisfaction", color: "#ab2645" },
+              {
+                end: 150,
+                suffix: "+",
+                label: "Stores Launched",
+                color: "#ab2645",
+                delay: 800,
+              },
+              {
+                end: 50,
+                prefix: "$",
+                suffix: "M+",
+                label: "Revenue Generated",
+                color: "#0b464f",
+                delay: 900,
+              },
+              {
+                end: 98,
+                suffix: "%",
+                label: "Client Satisfaction",
+                color: "#ab2645",
+                delay: 1000,
+              },
             ].map((stat, index) => (
               <motion.div
                 key={index}
@@ -199,7 +219,13 @@ export function HeroSection() {
                   className="text-3xl sm:text-4xl font-bold mb-1 sm:mb-2"
                   style={{ color: stat.color }}
                 >
-                  {stat.number}
+                  <CountUp
+                    end={stat.end}
+                    prefix={stat.prefix || ""}
+                    suffix={stat.suffix || ""}
+                    duration={2000}
+                    delay={stat.delay}
+                  />
                 </div>
                 <p className="text-xs sm:text-sm font-medium text-gray-600 uppercase tracking-wide">
                   {stat.label}
