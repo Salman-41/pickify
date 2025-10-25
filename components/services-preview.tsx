@@ -58,13 +58,7 @@ export function ServicesPreview() {
           </p>
         </motion.div>
 
-        <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-        >
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {services.map((service, index) => {
             const Icon = service.icon;
             const isEven = index % 2 === 0;
@@ -72,15 +66,22 @@ export function ServicesPreview() {
               <motion.div
                 key={index}
                 className="p-5 sm:p-6 rounded-xl bg-white border border-gray-100 smooth-transition hover:shadow-xl hover:border-gray-200 shadow-md"
-                variants={itemVariants}
-                whileHover={{ y: -8, transition: { duration: 0.3 } }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px", amount: 0.3 }}
+                transition={{
+                  duration: 0.5,
+                  delay: index * 0.1,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                whileHover={{ y: -8, transition: { duration: 0.2 } }}
                 whileTap={{ scale: 0.98 }}
               >
                 <motion.div
                   className="w-12 h-12 rounded-lg flex items-center justify-center mb-3 sm:mb-4 shadow-sm"
                   style={{ backgroundColor: isEven ? "#ab2645" : "#0b464f" }}
                   whileHover={{ rotate: 360 }}
-                  transition={{ duration: 0.6 }}
+                  transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                 >
                   <Icon size={24} className="text-white" />
                 </motion.div>
@@ -96,7 +97,7 @@ export function ServicesPreview() {
               </motion.div>
             );
           })}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

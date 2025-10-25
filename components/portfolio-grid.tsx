@@ -115,57 +115,57 @@ export function PortfolioGrid() {
               transition={{ duration: 0.4 }}
               whileHover={{ y: -10 }}
             >
-            <div className="relative h-64 sm:h-72 md:h-80 overflow-hidden bg-gray-50">
-              <img
-                src={item.image || "/placeholder.svg"}
-                alt={item.title}
-                className="w-full h-full object-cover smooth-transition group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 smooth-transition flex flex-col justify-end p-4 sm:p-5 md:p-6">
+              <div className="relative h-64 sm:h-72 md:h-80 overflow-hidden bg-gray-50">
+                <img
+                  src={item.image || "/placeholder.svg"}
+                  alt={item.title}
+                  className="w-full h-full object-cover smooth-transition group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 smooth-transition flex flex-col justify-end p-4 sm:p-5 md:p-6">
+                  <p
+                    className="text-xs sm:text-sm font-semibold mb-1 sm:mb-2"
+                    style={{ color: "#ab2645" }}
+                  >
+                    {item.category}
+                  </p>
+                  <h3 className="text-white text-base sm:text-lg md:text-xl font-bold mb-1 sm:mb-2">
+                    {item.title}
+                  </h3>
+                  <p className="text-white/80 text-xs sm:text-sm mb-3 sm:mb-4">
+                    {item.description}
+                  </p>
+                  <div className="flex gap-3 sm:gap-4 text-xs sm:text-sm">
+                    <div>
+                      <p className="font-semibold" style={{ color: "#ab2645" }}>
+                        {item.metrics.conversion}
+                      </p>
+                      <p className="text-white/60">Conversion</p>
+                    </div>
+                    <div>
+                      <p className="font-semibold" style={{ color: "#ab2645" }}>
+                        {item.metrics.aov}
+                      </p>
+                      <p className="text-white/60">AOV Increase</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="p-4 sm:p-5 md:p-6 bg-white">
                 <p
-                  className="text-xs sm:text-sm font-semibold mb-1 sm:mb-2"
+                  className="text-xs sm:text-sm font-medium mb-1 sm:mb-2 tracking-wide"
                   style={{ color: "#ab2645" }}
                 >
                   {item.category}
                 </p>
-                <h3 className="text-white text-base sm:text-lg md:text-xl font-bold mb-1 sm:mb-2">
+                <h3
+                  className="text-base sm:text-lg font-bold"
+                  style={{ color: "#0b464f" }}
+                >
                   {item.title}
                 </h3>
-                <p className="text-white/80 text-xs sm:text-sm mb-3 sm:mb-4">
-                  {item.description}
-                </p>
-                <div className="flex gap-3 sm:gap-4 text-xs sm:text-sm">
-                  <div>
-                    <p className="font-semibold" style={{ color: "#ab2645" }}>
-                      {item.metrics.conversion}
-                    </p>
-                    <p className="text-white/60">Conversion</p>
-                  </div>
-                  <div>
-                    <p className="font-semibold" style={{ color: "#ab2645" }}>
-                      {item.metrics.aov}
-                    </p>
-                    <p className="text-white/60">AOV Increase</p>
-                  </div>
-                </div>
               </div>
-            </div>
-            <div className="p-4 sm:p-5 md:p-6 bg-white">
-              <p
-                className="text-xs sm:text-sm font-medium mb-1 sm:mb-2 tracking-wide"
-                style={{ color: "#ab2645" }}
-              >
-                {item.category}
-              </p>
-              <h3
-                className="text-base sm:text-lg font-bold"
-                style={{ color: "#0b464f" }}
-              >
-                {item.title}
-              </h3>
-            </div>
-          </motion.div>
-        ))}
+            </motion.div>
+          ))}
         </AnimatePresence>
       </motion.div>
     </div>
