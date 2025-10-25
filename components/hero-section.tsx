@@ -24,7 +24,7 @@ import { CountUp } from "@/components/count-up";
 export function HeroSection() {
   return (
     <section
-      className="relative min-h-[100vh] sm:min-h-[90vh] flex items-center justify-center overflow-hidden pt-24 pb-12 sm:pt-20 sm:pb-0"
+      className="relative min-h-screen sm:min-h-[90vh] flex items-center justify-center overflow-hidden pt-24 pb-12 sm:pt-20 sm:pb-0"
       style={{
         background:
           "linear-gradient(180deg, rgba(171, 38, 69, 0.06) 0%, rgba(255, 255, 255, 1) 100%)",
