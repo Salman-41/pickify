@@ -18,7 +18,11 @@ export function Navbar() {
 
   return (
     <motion.nav
-      className="fixed top-0 w-full bg-white/70 backdrop-blur-xl border-b border-white/20 z-50"
+      className="fixed top-0 w-full backdrop-blur-xl border-b border-white/20 z-50"
+      style={{
+        background:
+          "linear-gradient(135deg, rgba(171, 38, 69, 0.08) 0%, rgba(255, 255, 255, 0.6) 100%)",
+      }}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
