@@ -9,12 +9,12 @@ export function HeroSection() {
       className="relative min-h-[100vh] sm:min-h-[90vh] flex items-center justify-center overflow-hidden pt-24 pb-12 sm:pt-20 sm:pb-0"
       style={{
         background:
-          "linear-gradient(180deg, rgba(171, 38, 69, 0.02) 0%, rgba(255, 255, 255, 1) 100%)",
+          "linear-gradient(180deg, rgba(171, 38, 69, 0.06) 0%, rgba(255, 255, 255, 1) 100%)",
       }}
     >
       {/* Minimal decorative elements - very subtle with floating animation */}
       <motion.div
-        className="absolute top-[15%] right-[8%] w-[200px] h-[200px] sm:w-[280px] sm:h-[280px] rounded-full blur-3xl opacity-[0.04]"
+        className="absolute top-[15%] right-[8%] w-[200px] h-[200px] sm:w-[280px] sm:h-[280px] rounded-full blur-3xl opacity-[0.12]"
         style={{
           background: "radial-gradient(circle, #ab2645 0%, transparent 70%)",
         }}
@@ -29,7 +29,7 @@ export function HeroSection() {
         }}
       />
       <motion.div
-        className="absolute top-[15%] left-[8%] w-[200px] h-[200px] sm:w-[280px] sm:h-[280px] rounded-full blur-3xl opacity-[0.04]"
+        className="absolute top-[15%] left-[8%] w-[200px] h-[200px] sm:w-[280px] sm:h-[280px] rounded-full blur-3xl opacity-[0.12]"
         style={{
           background: "radial-gradient(circle, #0b464f 0%, transparent 70%)",
         }}
@@ -44,7 +44,7 @@ export function HeroSection() {
         }}
       />
       <motion.div
-        className="absolute bottom-[20%] left-[10%] w-40 h-40 sm:w-60 sm:h-60 rounded-full blur-3xl opacity-[0.03]"
+        className="absolute bottom-[20%] left-[10%] w-40 h-40 sm:w-60 sm:h-60 rounded-full blur-3xl opacity-[0.1]"
         style={{
           background: "radial-gradient(circle, #ab2645 0%, transparent 70%)",
         }}
@@ -59,7 +59,7 @@ export function HeroSection() {
         }}
       />
       <motion.div
-        className="absolute bottom-[20%] right-[10%] w-40 h-40 sm:w-60 sm:h-60 rounded-full blur-3xl opacity-[0.03]"
+        className="absolute bottom-[20%] right-[10%] w-40 h-40 sm:w-60 sm:h-60 rounded-full blur-3xl opacity-[0.1]"
         style={{
           background: "radial-gradient(circle, #0b464f 0%, transparent 70%)",
         }}

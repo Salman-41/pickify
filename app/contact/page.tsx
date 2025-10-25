@@ -12,18 +12,18 @@ export default function ContactPage() {
         className="relative py-12 sm:py-16 md:py-20 pt-24 sm:pt-28 overflow-hidden"
         style={{
           background:
-            "linear-gradient(180deg, rgba(171, 38, 69, 0.02) 0%, rgba(255, 255, 255, 1) 100%)",
+            "linear-gradient(180deg, rgba(171, 38, 69, 0.06) 0%, rgba(255, 255, 255, 1) 100%)",
         }}
       >
         {/* Decorative gradient orbs */}
         <div
-          className="absolute top-[10%] right-[8%] w-[200px] h-[200px] sm:w-[280px] sm:h-[280px] rounded-full blur-3xl opacity-[0.04]"
+          className="absolute top-[10%] right-[8%] w-[200px] h-[200px] sm:w-[280px] sm:h-[280px] rounded-full blur-3xl opacity-[0.12]"
           style={{
             background: "radial-gradient(circle, #ab2645 0%, transparent 70%)",
           }}
         />
         <div
-          className="absolute top-[10%] left-[8%] w-[200px] h-[200px] sm:w-[280px] sm:h-[280px] rounded-full blur-3xl opacity-[0.04]"
+          className="absolute top-[10%] left-[8%] w-[200px] h-[200px] sm:w-[280px] sm:h-[280px] rounded-full blur-3xl opacity-[0.12]"
           style={{
             background: "radial-gradient(circle, #0b464f 0%, transparent 70%)",
           }}
