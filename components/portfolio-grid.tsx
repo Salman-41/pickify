@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const portfolioItems = [
   {
@@ -66,12 +67,17 @@ export function PortfolioGrid() {
   return (
     <div>
       {/* Filter Buttons */}
-      <div className="flex flex-wrap gap-2 sm:gap-3 justify-center mb-8 sm:mb-10 md:mb-12 px-2">
-        {categories.map((category) => (
-          <button
+      <motion.div
+        className="flex flex-wrap gap-2 sm:gap-3 justify-center mb-8 sm:mb-10 md:mb-12 px-2"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        {categories.map((category, index) => (
+          <motion.button
             key={category}
             onClick={() => setActiveCategory(category)}
-            className={`px-4 sm:px-6 py-2 min-h-10 sm:min-h-12 rounded-lg text-sm sm:text-base font-semibold smooth-transition active:scale-95 ${
+            className={`px-4 sm:px-6 py-2 min-h-10 sm:min-h-12 rounded-lg text-sm sm:text-base font-semibold smooth-transition ${
               activeCategory === category
                 ? "text-white shadow-md"
                 : "border-2 hover:shadow-md"
@@ -81,19 +87,34 @@ export function PortfolioGrid() {
                 ? { backgroundColor: "#ab2645" }
                 : { borderColor: "#0b464f", color: "#0b464f" }
             }
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.1 }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
             {category}
-          </button>
+          </motion.button>
         ))}
-      </div>
+      </motion.div>
 
       {/* Portfolio Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
-        {filteredItems.map((item) => (
-          <div
-            key={item.id}
-            className="group cursor-pointer rounded-xl overflow-hidden smooth-transition hover:shadow-xl border border-gray-100 bg-white shadow-md active:scale-[0.98]"
-          >
+      <motion.div
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8"
+        layout
+      >
+        <AnimatePresence mode="popLayout">
+          {filteredItems.map((item) => (
+            <motion.div
+              key={item.id}
+              className="group cursor-pointer rounded-xl overflow-hidden smooth-transition hover:shadow-xl border border-gray-100 bg-white shadow-md"
+              layout
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.8 }}
+              transition={{ duration: 0.4 }}
+              whileHover={{ y: -10 }}
+            >
             <div className="relative h-64 sm:h-72 md:h-80 overflow-hidden bg-gray-50">
               <img
                 src={item.image || "/placeholder.svg"}
@@ -143,9 +164,10 @@ export function PortfolioGrid() {
                 {item.title}
               </h3>
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
+        </AnimatePresence>
+      </motion.div>
     </div>
   );
 }

@@ -1,5 +1,8 @@
+"use client";
+
 import { ServiceCard } from "@/components/service-card";
 import { CTASection } from "@/components/cta-section";
+import { motion } from "framer-motion";
 import {
   Palette,
   Code,
@@ -119,21 +122,36 @@ export default function ServicesPage() {
         />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="mb-4 sm:mb-6 inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full border border-gray-200 bg-gray-50/50">
+          <motion.div
+            className="mb-4 sm:mb-6 inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full border border-gray-200 bg-gray-50/50"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          >
             <Sparkles size={14} style={{ color: "#ab2645" }} />
             <span className="text-[10px] sm:text-xs font-medium tracking-wide text-gray-700">
               OUR SERVICES
             </span>
-          </div>
+          </motion.div>
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-[1.15] sm:leading-[1.1] tracking-tight px-2">
+          <motion.h1
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-[1.15] sm:leading-[1.1] tracking-tight px-2"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+          >
             <span style={{ color: "#0b464f" }}>Our</span>{" "}
             <span style={{ color: "#ab2645" }}>Services</span>
-          </h1>
-          <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed px-4">
+          </motion.h1>
+          <motion.p
+            className="text-sm sm:text-base md:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed px-4"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+          >
             Complete Shopify solutions designed to transform your store and
             maximize revenue
-          </p>
+          </motion.p>
         </div>
       </section>
 
@@ -148,7 +166,19 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             {services.map((service, index) => (
-              <ServiceCard key={index} {...service} />
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px", amount: 0.2 }}
+                transition={{
+                  duration: 0.5,
+                  delay: index * 0.08,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+              >
+                <ServiceCard {...service} />
+              </motion.div>
             ))}
           </div>
         </div>
@@ -163,7 +193,13 @@ export default function ServicesPage() {
         }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10 sm:mb-12 md:mb-16">
+          <motion.div
+            className="text-center mb-10 sm:mb-12 md:mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          >
             <h2
               className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 text-balance-custom px-2"
               style={{ color: "#0b464f" }}
@@ -173,7 +209,7 @@ export default function ServicesPage() {
             <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed px-4">
               How we transform your Shopify store into a revenue machine
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
             {[
@@ -199,9 +235,18 @@ export default function ServicesPage() {
                 description: "Monitor, test, and continuously improve",
               },
             ].map((item, index) => (
-              <div
+              <motion.div
                 key={index}
                 className="relative p-5 sm:p-6 rounded-xl bg-white border border-gray-100 shadow-md hover:shadow-xl smooth-transition"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px", amount: 0.3 }}
+                transition={{
+                  duration: 0.5,
+                  delay: index * 0.1,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                whileHover={{ y: -5, transition: { duration: 0.2 } }}
               >
                 <div
                   className="text-4xl sm:text-5xl font-bold mb-3 sm:mb-4"
@@ -226,7 +271,7 @@ export default function ServicesPage() {
                     →
                   </div>
                 )}
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

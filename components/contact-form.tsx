@@ -4,6 +4,7 @@ import type React from "react";
 
 import { useState } from "react";
 import { Mail, Phone, MapPin } from "lucide-react";
+import { motion } from "framer-motion";
 
 export function ContactForm() {
   const [formData, setFormData] = useState({
@@ -30,98 +31,119 @@ export function ContactForm() {
     setTimeout(() => setSubmitted(false), 3000);
   };
 
+  const contactItems = [
+    {
+      icon: Mail,
+      title: "Email",
+      value: "hello@pickify.com",
+      href: "mailto:hello@pickify.com",
+    },
+    {
+      icon: Phone,
+      title: "Phone",
+      value: "+1 (234) 567-890",
+      href: "tel:+1234567890",
+    },
+    {
+      icon: MapPin,
+      title: "Location",
+      value: "San Francisco, CA",
+      href: null,
+    },
+  ];
+
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
       {/* Contact Information */}
-      <div className="lg:col-span-1">
+      <motion.div
+        className="lg:col-span-1"
+        initial={{ opacity: 0, x: -30 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
         <h3 className="text-2xl font-bold mb-8" style={{ color: "#0b464f" }}>
           Get in Touch
         </h3>
 
         <div className="space-y-8">
-          <div className="flex gap-4">
-            <div
-              className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0"
-              style={{ backgroundColor: "#ab2645" }}
-            >
-              <Mail size={24} className="text-white" />
-            </div>
-            <div>
-              <p className="font-semibold mb-1" style={{ color: "#0b464f" }}>
-                Email
-              </p>
-              <a
-                href="mailto:hello@pickify.com"
-                className="text-gray-600 smooth-transition"
-                style={{
-                  transition: "color 0.3s ease",
-                }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = "#ab2645")}
-                onMouseLeave={(e) =>
-                  (e.currentTarget.style.color = "rgb(75, 85, 99)")
-                }
+          {contactItems.map((item, index) => {
+            const Icon = item.icon;
+            return (
+              <motion.div
+                key={item.title}
+                className="flex gap-4"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1, duration: 0.5 }}
               >
-                hello@pickify.com
-              </a>
-            </div>
-          </div>
-
-          <div className="flex gap-4">
-            <div
-              className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0"
-              style={{ backgroundColor: "#ab2645" }}
-            >
-              <Phone size={24} className="text-white" />
-            </div>
-            <div>
-              <p className="font-semibold mb-1" style={{ color: "#0b464f" }}>
-                Phone
-              </p>
-              <a
-                href="tel:+1234567890"
-                className="text-gray-600 smooth-transition"
-                style={{
-                  transition: "color 0.3s ease",
-                }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = "#ab2645")}
-                onMouseLeave={(e) =>
-                  (e.currentTarget.style.color = "rgb(75, 85, 99)")
-                }
-              >
-                +1 (234) 567-890
-              </a>
-            </div>
-          </div>
-
-          <div className="flex gap-4">
-            <div
-              className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0"
-              style={{ backgroundColor: "#ab2645" }}
-            >
-              <MapPin size={24} className="text-white" />
-            </div>
-            <div>
-              <p className="font-semibold mb-1" style={{ color: "#0b464f" }}>
-                Location
-              </p>
-              <p className="text-gray-600">San Francisco, CA</p>
-            </div>
-          </div>
+                <motion.div
+                  className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0"
+                  style={{ backgroundColor: "#ab2645" }}
+                  whileHover={{ rotate: 360 }}
+                  transition={{ duration: 0.6 }}
+                >
+                  <Icon size={24} className="text-white" />
+                </motion.div>
+                <div>
+                  <p
+                    className="font-semibold mb-1"
+                    style={{ color: "#0b464f" }}
+                  >
+                    {item.title}
+                  </p>
+                  {item.href ? (
+                    <a
+                      href={item.href}
+                      className="text-gray-600 smooth-transition"
+                      style={{
+                        transition: "color 0.3s ease",
+                      }}
+                      onMouseEnter={(e) =>
+                        (e.currentTarget.style.color = "#ab2645")
+                      }
+                      onMouseLeave={(e) =>
+                        (e.currentTarget.style.color = "rgb(75, 85, 99)")
+                      }
+                    >
+                      {item.value}
+                    </a>
+                  ) : (
+                    <p className="text-gray-600">{item.value}</p>
+                  )}
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
 
         {/* Response Time */}
-        <div className="mt-12 p-6 rounded-lg border border-gray-100 bg-white shadow-md">
+        <motion.div
+          className="mt-12 p-6 rounded-lg border border-gray-100 bg-white shadow-md"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.4, duration: 0.6 }}
+          whileHover={{ y: -5 }}
+        >
           <p className="text-sm text-gray-600">
             <span className="font-semibold" style={{ color: "#ab2645" }}>
               Average response time:
             </span>{" "}
             Within 2 hours during business hours
           </p>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
       {/* Contact Form */}
-      <div className="lg:col-span-2">
+      <motion.div
+        className="lg:col-span-2"
+        initial={{ opacity: 0, x: 30 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
@@ -304,12 +326,17 @@ export function ContactForm() {
           </button>
 
           {submitted && (
-            <div className="p-4 bg-green-50 border border-green-200 rounded-lg text-green-700 text-center">
+            <motion.div
+              className="p-4 bg-green-50 border border-green-200 rounded-lg text-green-700 text-center"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.9 }}
+            >
               Thank you! We'll get back to you soon.
-            </div>
+            </motion.div>
           )}
         </form>
-      </div>
+      </motion.div>
     </div>
   );
 }

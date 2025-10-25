@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,7 +17,12 @@ export function Navbar() {
   ];
 
   return (
-    <nav className="fixed top-0 w-full bg-white/70 backdrop-blur-xl border-b border-white/20 z-50">
+    <motion.nav
+      className="fixed top-0 w-full bg-white/70 backdrop-blur-xl border-b border-white/20 z-50"
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="flex items-center">
@@ -74,43 +80,59 @@ export function Navbar() {
         </div>
 
         {/* Mobile Menu */}
-        {isOpen && (
-          <div
-            className="md:hidden pb-4 space-y-2 border-t"
-            style={{
-              borderColor: "rgba(11, 70, 79, 0.1)",
-              backgroundColor: "rgba(255, 255, 255, 0.5)",
-            }}
-          >
-            {links.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="block px-4 py-2 font-medium smooth-transition rounded-lg"
-                style={{
-                  color: "#0b464f",
-                  backgroundColor: "transparent",
-                }}
-                onMouseEnter={(e) =>
-                  (e.currentTarget.style.backgroundColor =
-                    "rgba(171, 38, 69, 0.08)")
-                }
-                onMouseLeave={(e) =>
-                  (e.currentTarget.style.backgroundColor = "transparent")
-                }
-              >
-                {link.label}
-              </Link>
-            ))}
-            <button
-              className="w-full mt-4 px-6 py-3 text-white rounded-lg font-medium smooth-transition hover:opacity-90 active:scale-95"
-              style={{ backgroundColor: "#ab2645" }}
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              className="md:hidden pb-4 space-y-2 border-t"
+              style={{
+                borderColor: "rgba(11, 70, 79, 0.1)",
+                backgroundColor: "rgba(255, 255, 255, 0.5)",
+              }}
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3 }}
             >
-              Hire Us
-            </button>
-          </div>
-        )}
+              {links.map((link, index) => (
+                <motion.div
+                  key={link.href}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.05 }}
+                >
+                  <Link
+                    href={link.href}
+                    className="block px-4 py-2 font-medium smooth-transition rounded-lg"
+                    style={{
+                      color: "#0b464f",
+                      backgroundColor: "transparent",
+                    }}
+                    onMouseEnter={(e) =>
+                      (e.currentTarget.style.backgroundColor =
+                        "rgba(171, 38, 69, 0.08)")
+                    }
+                    onMouseLeave={(e) =>
+                      (e.currentTarget.style.backgroundColor = "transparent")
+                    }
+                  >
+                    {link.label}
+                  </Link>
+                </motion.div>
+              ))}
+              <motion.button
+                className="w-full mt-4 px-6 py-3 text-white rounded-lg font-medium smooth-transition hover:opacity-90 active:scale-95"
+                style={{ backgroundColor: "#ab2645" }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Hire Us
+              </motion.button>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
-    </nav>
+    </motion.nav>
   );
 }
