@@ -2,6 +2,7 @@
 
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 /**
  * Project data for featured work showcase.
@@ -48,6 +49,13 @@ const projects = [
  * ```
  */
 export function FeaturedWork() {
+  const handleViewCaseStudy = (projectTitle: string) => {
+    // Navigate to portfolio page with project context
+    window.location.href = `/portfolio?project=${encodeURIComponent(
+      projectTitle
+    )}`;
+  };
+
   return (
     <section
       className="py-12 sm:py-16 md:py-20"
@@ -91,6 +99,7 @@ export function FeaturedWork() {
               }}
               whileHover={{ y: -8, transition: { duration: 0.2 } }}
               whileTap={{ scale: 0.98 }}
+              onClick={() => handleViewCaseStudy(project.title)}
             >
               <div className="relative h-48 sm:h-56 md:h-64 overflow-hidden bg-gray-50">
                 <img
@@ -137,14 +146,16 @@ export function FeaturedWork() {
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.5, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
         >
-          <motion.button
-            className="w-full sm:w-auto min-h-12 px-6 sm:px-8 py-4 text-white rounded-lg font-semibold smooth-transition hover:opacity-90 flex items-center justify-center gap-2 mx-auto shadow-sm hover:shadow-md"
-            style={{ backgroundColor: "#ab2645" }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            View All Projects <ArrowRight size={20} />
-          </motion.button>
+          <Link href="/portfolio">
+            <motion.button
+              className="w-full sm:w-auto min-h-12 px-6 sm:px-8 py-4 text-white rounded-lg font-semibold smooth-transition hover:opacity-90 flex items-center justify-center gap-2 mx-auto shadow-sm hover:shadow-md cursor-pointer"
+              style={{ backgroundColor: "#ab2645" }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              View All Projects <ArrowRight size={20} />
+            </motion.button>
+          </Link>
         </motion.div>
       </div>
     </section>

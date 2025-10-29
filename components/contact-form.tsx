@@ -30,6 +30,8 @@ export function ContactForm() {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -38,29 +40,68 @@ export function ContactForm() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 3000);
+    setIsLoading(true);
+    setError("");
+
+    try {
+      const formDataToSubmit = new FormData();
+      formDataToSubmit.append("name", formData.name);
+      formDataToSubmit.append("email", formData.email);
+      formDataToSubmit.append("phone", formData.phone);
+      formDataToSubmit.append("company", formData.company);
+      formDataToSubmit.append("message", formData.message);
+      formDataToSubmit.append(
+        "access_key",
+        "4db70d0f-eb47-48b2-9b97-1b860033e7c5"
+      );
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formDataToSubmit,
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setSubmitted(true);
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          company: "",
+          message: "",
+        });
+        setTimeout(() => setSubmitted(false), 3000);
+      } else {
+        setError(data.message || "Failed to send message. Please try again.");
+      }
+    } catch (err) {
+      setError("An error occurred. Please try again later.");
+      console.error("Form submission error:", err);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const contactItems = [
     {
       icon: Mail,
       title: "Email",
-      value: "hello@pickify.com",
-      href: "mailto:hello@pickify.com",
+      value: "pickify109@gmail.com",
+      href: "mailto:pickify109@gmail.com",
     },
     {
       icon: Phone,
       title: "Phone",
-      value: "+1 (234) 567-890",
-      href: "tel:+1234567890",
+      value: "+92 370 012 9502",
+      href: "tel:+923700129502",
     },
     {
       icon: MapPin,
       title: "Location",
-      value: "San Francisco, CA",
+      value: "Karachi, Pakistan",
       href: null,
     },
   ];
@@ -320,23 +361,37 @@ export function ContactForm() {
 
           <button
             type="submit"
-            className="w-full px-8 py-4 text-white rounded-lg font-semibold smooth-transition hover:shadow-xl hover:scale-[1.02]"
+            disabled={isLoading}
+            className="w-full px-8 py-4 text-white rounded-lg font-semibold smooth-transition hover:shadow-xl hover:scale-[1.02] disabled:opacity-60 disabled:cursor-not-allowed"
             style={{
               backgroundColor: "#ab2645",
               transition: "all 0.3s ease",
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "scale(1.02)";
-              e.currentTarget.style.boxShadow =
-                "0 20px 25px -5px rgba(171, 38, 69, 0.3), 0 10px 10px -5px rgba(171, 38, 69, 0.2)";
+              if (!isLoading) {
+                e.currentTarget.style.transform = "scale(1.02)";
+                e.currentTarget.style.boxShadow =
+                  "0 20px 25px -5px rgba(171, 38, 69, 0.3), 0 10px 10px -5px rgba(171, 38, 69, 0.2)";
+              }
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.transform = "scale(1)";
               e.currentTarget.style.boxShadow = "none";
             }}
           >
-            Send Message
+            {isLoading ? "Sending..." : "Send Message"}
           </button>
+
+          {error && (
+            <motion.div
+              className="p-4 bg-red-50 border border-red-200 rounded-lg text-red-700 text-center"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.9 }}
+            >
+              {error}
+            </motion.div>
+          )}
 
           {submitted && (
             <motion.div

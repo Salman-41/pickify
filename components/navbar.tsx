@@ -27,6 +27,11 @@ export function Navbar() {
 
   const closeMenu = () => setIsOpen(false);
 
+  const handleHireUs = () => {
+    const whatsappUrl = `https://wa.me/923700129502?text=Hi%20Pickify!%20I'm%20interested%20in%20your%20Shopify%20design%20and%20development%20services.%20Can%20we%20discuss%20my%20project?`;
+    window.open(whatsappUrl, "_blank");
+  };
+
   const links = [
     { href: "/", label: "Home" },
     { href: "/portfolio", label: "Portfolio" },
@@ -81,7 +86,8 @@ export function Navbar() {
 
           {/* CTA Button */}
           <button
-            className="hidden md:block px-6 py-2 text-white rounded-lg font-medium smooth-transition hover:opacity-90"
+            onClick={handleHireUs}
+            className="hidden md:block px-6 py-2 text-white rounded-lg font-medium smooth-transition hover:opacity-90 cursor-pointer"
             style={{
               backgroundColor: "#0b464f",
             }}
@@ -163,13 +169,16 @@ export function Navbar() {
                     </motion.div>
                   ))}
                   <motion.button
-                    className="w-full mt-4 px-6 py-3 text-white rounded-lg font-medium smooth-transition hover:opacity-90 active:scale-95"
+                    className="w-full mt-4 px-6 py-3 text-white rounded-lg font-medium smooth-transition hover:opacity-90 active:scale-95 cursor-pointer"
                     style={{ backgroundColor: "#ab2645" }}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3 }}
                     whileTap={{ scale: 0.95 }}
-                    onClick={closeMenu}
+                    onClick={() => {
+                      handleHireUs();
+                      closeMenu();
+                    }}
                   >
                     Hire Us
                   </motion.button>

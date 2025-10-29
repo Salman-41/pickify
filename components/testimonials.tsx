@@ -24,24 +24,24 @@ interface Testimonial {
  */
 const testimonials: Testimonial[] = [
   {
-    name: "Sarah Chen",
-    role: "Founder, Luxe Essentials",
+    name: "Faizan Butt",
+    role: "Founder, TZ Store",
     content:
-      "Pickify completely transformed our store. Within 3 months, our conversion rate increased by 340%. They truly understand e-commerce.",
+      "They truly understood my vision from the start and turned my ideas into a website that perfectly represents my brand. Extremely cooperative and professional — highly recommended for marketing and advertising.",
     rating: 5,
   },
   {
-    name: "Marcus Johnson",
-    role: "CEO, Tech Gear Co",
+    name: "Humaira Khatoon",
+    role: "Founder, Zeeshan Herbal Products",
     content:
-      "The team's attention to detail and understanding of conversion optimization is unmatched. Best investment we made for our business.",
+      "Their team made promoting my small business effortless. Pickify handled everything with care and creativity, and my brand started growing faster than I expected. Reliable, affordable, and genuinely supportive — couldn't ask for better service.",
     rating: 5,
   },
   {
-    name: "Emma Rodriguez",
-    role: "Owner, Sustainable Beauty",
+    name: "Salman Yousufzai",
+    role: "Founder, Tolwaz",
     content:
-      "Professional, responsive, and results-driven. They delivered exactly what we needed and more. Highly recommend!",
+      "They built a beautiful, high-performing website for us at a very reasonable cost. Friendly, responsive, and skilled — the entire process was smooth from start to finish. Absolutely recommended.",
     rating: 5,
   },
 ];

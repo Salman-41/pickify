@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Mail, Linkedin, Twitter } from "lucide-react";
+import { Mail, Linkedin, Twitter, MessageCircle } from "lucide-react";
 
 /**
  * Footer component with site navigation and social links.
@@ -104,11 +104,22 @@ export function Footer() {
             </h3>
             <div className="flex gap-3 sm:gap-4">
               <a
-                href="#"
+                href="mailto:pickify109@gmail.com"
+                title="Email us"
                 className="text-white/80 hover:text-white smooth-transition"
               >
                 <Mail size={18} className="sm:hidden" />
                 <Mail size={20} className="hidden sm:block" />
+              </a>
+              <a
+                href="https://wa.me/923700129502"
+                title="Chat on WhatsApp"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/80 hover:text-white smooth-transition"
+              >
+                <MessageCircle size={18} className="sm:hidden" />
+                <MessageCircle size={20} className="hidden sm:block" />
               </a>
               <a
                 href="#"

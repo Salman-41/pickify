@@ -20,6 +20,11 @@ import { motion } from "framer-motion";
  * ```
  */
 export function CTASection() {
+  const handleScheduleClick = () => {
+    const whatsappUrl = `https://wa.me/923700129502?text=Hi%20Pickify!%20I'm%20interested%20in%20transforming%20my%20Shopify%20store.%20Can%20we%20schedule%20a%20consultation?`;
+    window.open(whatsappUrl, "_blank");
+  };
+
   return (
     <section
       className="py-12 sm:py-16 md:py-20"
@@ -51,7 +56,8 @@ export function CTASection() {
         </motion.p>
 
         <motion.button
-          className="w-full sm:w-auto min-h-12 px-6 sm:px-8 py-4 text-white rounded-lg font-semibold smooth-transition hover:opacity-90 flex items-center justify-center gap-2 mx-auto shadow-sm hover:shadow-md"
+          onClick={handleScheduleClick}
+          className="w-full sm:w-auto min-h-12 px-6 sm:px-8 py-4 text-white rounded-lg font-semibold smooth-transition hover:opacity-90 flex items-center justify-center gap-2 mx-auto shadow-sm hover:shadow-md cursor-pointer"
           style={{ backgroundColor: "#ab2645" }}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
