@@ -37,7 +37,8 @@ const portfolioItems: PortfolioItem[] = [
     title: "Dryon Body Care",
     category: "Design",
     image: "/portfolio/dryon-co.png",
-    description: "Premium sweatproof body spray brand with modern dark-themed e-commerce",
+    description:
+      "Premium sweatproof body spray brand with modern dark-themed e-commerce",
     metrics: { conversion: "+340%", aov: "+125%" },
   },
   {
@@ -45,7 +46,8 @@ const portfolioItems: PortfolioItem[] = [
     title: "RevelryStyle Eyewear",
     category: "Development",
     image: "/portfolio/revelry-style.png",
-    description: "Designer-inspired sunglasses store with custom product filtering",
+    description:
+      "Designer-inspired sunglasses store with custom product filtering",
     metrics: { conversion: "+285%", aov: "+95%" },
   },
   {
@@ -53,7 +55,8 @@ const portfolioItems: PortfolioItem[] = [
     title: "Bilaario Cosmetics",
     category: "Optimization",
     image: "/portfolio/bilaario-cosmetics.png",
-    description: "Multi-brand beauty retailer featuring The Ordinary, CeraVe, and premium skincare",
+    description:
+      "Multi-brand beauty retailer featuring The Ordinary, CeraVe, and premium skincare",
     metrics: { conversion: "+420%", aov: "+180%" },
   },
   {
@@ -61,7 +64,8 @@ const portfolioItems: PortfolioItem[] = [
     title: "Essencia Perfumery",
     category: "Design",
     image: "/portfolio/essencia.png",
-    description: "Luxury fragrance boutique with designer-inspired scents for men and women",
+    description:
+      "Luxury fragrance boutique with designer-inspired scents for men and women",
     metrics: { conversion: "+215%", aov: "+110%" },
   },
   {
@@ -69,7 +73,8 @@ const portfolioItems: PortfolioItem[] = [
     title: "Chuzoify",
     category: "Development",
     image: "/portfolio/chuzoify.png",
-    description: "Multi-category lifestyle store for fashion, home & kitchen, and tech accessories",
+    description:
+      "Multi-category lifestyle store for fashion, home & kitchen, and tech accessories",
     metrics: { conversion: "+310%", aov: "+200%" },
   },
 ];
