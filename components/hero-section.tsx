@@ -4,6 +4,7 @@ import { ArrowRight, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 import { VariableProximity } from "@/components/variable-proximity";
 import { CountUp } from "@/components/count-up";
+import { ThreadsBg } from "@/components/threads-bg";
 
 /**
  * Hero section component for the homepage.
@@ -24,7 +25,7 @@ import { CountUp } from "@/components/count-up";
 export function HeroSection() {
   return (
     <section
-      className="relative min-h-screen sm:min-h-[90vh] flex items-center justify-center overflow-hidden pt-24 pb-12 sm:pt-20 sm:pb-0"
+      className="relative min-h-screen sm:min-h-[90vh] flex items-center justify-center pt-24 pb-12 sm:pt-20 sm:pb-0"
       style={{
         background:
           "linear-gradient(180deg, rgba(171, 38, 69, 0.06) 0%, rgba(255, 255, 255, 1) 100%)",
@@ -90,6 +91,14 @@ export function HeroSection() {
           repeat: Infinity,
           ease: "easeInOut",
         }}
+      />
+
+      {/* Threads background at the bottom */}
+      <ThreadsBg
+        amplitude={3.8}
+        distance={0.9}
+        enableMouse={true}
+        className="absolute bottom-0 left-0 w-full h-80 sm:h-96 md:h-full pointer-events-none"
       />
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
