@@ -18,6 +18,8 @@ interface PortfolioItem {
   image: string;
   /** Project description */
   description: string;
+  /** Project website URL */
+  projectUrl: string;
   /** Performance metrics */
   metrics: {
     /** Conversion rate increase */
@@ -39,6 +41,7 @@ const portfolioItems: PortfolioItem[] = [
     image: "/portfolio/dryon-co.png",
     description:
       "Premium sweatproof body spray brand with modern dark-themed e-commerce",
+    projectUrl: "https://www.dryon.co",
     metrics: { conversion: "+340%", aov: "+125%" },
   },
   {
@@ -48,6 +51,7 @@ const portfolioItems: PortfolioItem[] = [
     image: "/portfolio/revelry-style.png",
     description:
       "Designer-inspired sunglasses store with custom product filtering",
+    projectUrl: "https://www.revelrystyle.com",
     metrics: { conversion: "+285%", aov: "+95%" },
   },
   {
@@ -57,6 +61,7 @@ const portfolioItems: PortfolioItem[] = [
     image: "/portfolio/bilaario-cosmetics.png",
     description:
       "Multi-brand beauty retailer featuring The Ordinary, CeraVe, and premium skincare",
+    projectUrl: "https://www.bilaario.com",
     metrics: { conversion: "+420%", aov: "+180%" },
   },
   {
@@ -66,6 +71,7 @@ const portfolioItems: PortfolioItem[] = [
     image: "/portfolio/essencia.png",
     description:
       "Luxury fragrance boutique with designer-inspired scents for men and women",
+    projectUrl: "https://www.essencia.pk",
     metrics: { conversion: "+215%", aov: "+110%" },
   },
   {
@@ -75,6 +81,7 @@ const portfolioItems: PortfolioItem[] = [
     image: "/portfolio/chuzoify.png",
     description:
       "Multi-category lifestyle store for fashion, home & kitchen, and tech accessories",
+    projectUrl: "https://www.chuzoify.com",
     metrics: { conversion: "+310%", aov: "+200%" },
   },
 ];
@@ -159,6 +166,7 @@ export function PortfolioGrid() {
               exit={{ opacity: 0, scale: 0.8 }}
               transition={{ duration: 0.4 }}
               whileHover={{ y: -10 }}
+              onClick={() => window.open(item.projectUrl, "_blank")}
             >
               <div className="relative h-64 sm:h-72 md:h-80 overflow-hidden bg-gray-50">
                 <img
