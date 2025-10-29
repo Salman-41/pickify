@@ -10,23 +10,23 @@ import { motion } from "framer-motion";
 const projects = [
   {
     id: 1,
-    title: "Luxury Fashion Brand",
-    category: "E-commerce Design",
-    image: "/placeholder.svg?height=400&width=600",
+    title: "Dryon Body Care",
+    category: "Premium Grooming Products",
+    image: "/portfolio/dryon-co.png",
     increase: "340%",
   },
   {
     id: 2,
-    title: "Sustainable Beauty",
-    category: "Full Store Redesign",
-    image: "/placeholder.svg?height=400&width=600",
-    increase: "280%",
+    title: "RevelryStyle Eyewear",
+    category: "Designer Sunglasses Store",
+    image: "/portfolio/revelry-style.png",
+    increase: "285%",
   },
   {
     id: 3,
-    title: "Tech Accessories",
-    category: "Conversion Optimization",
-    image: "/placeholder.svg?height=400&width=600",
+    title: "Bilaario Cosmetics",
+    category: "Beauty & Skincare E-commerce",
+    image: "/portfolio/bilaario-cosmetics.png",
     increase: "420%",
   },
 ];

@@ -121,7 +121,8 @@ export const ThreadsBg: React.FC<ThreadsBgProps> = ({
           const progress = x / width;
 
           // Base Y position
-          const baseY = height / 2 + (i - threads / 2) * threadSpacing * distance;
+          const baseY =
+            height / 2 + (i - threads / 2) * threadSpacing * distance;
 
           // Calculate amplitudes based on mouse position
           const mouseAmp = enableMouse
@@ -136,9 +137,7 @@ export const ThreadsBg: React.FC<ThreadsBgProps> = ({
           const y =
             baseY +
             Math.sin(
-              progress * Math.PI * 2 * mouseDist +
-                i * 0.7 +
-                mouse.current.x * 2
+              progress * Math.PI * 2 * mouseDist + i * 0.7 + mouse.current.x * 2
             ) *
               (threadSpacing * mouseAmp);
 
