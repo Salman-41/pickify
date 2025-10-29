@@ -45,6 +45,13 @@ export function ServiceCard({
   features,
   price,
 }: ServiceCardProps) {
+  const handleLearnMore = () => {
+    const whatsappUrl = `https://wa.me/923700129502?text=Hi%20Pickify!%20I'm%20interested%20in%20learning%20more%20about%20your%20${encodeURIComponent(
+      title
+    )}%20service.`;
+    window.open(whatsappUrl, "_blank");
+  };
+
   return (
     <div className="group p-5 sm:p-6 md:p-8 rounded-xl border border-gray-100 smooth-transition hover:shadow-xl bg-white shadow-md active:scale-[0.98]">
       <div
@@ -94,7 +101,8 @@ export function ServiceCard({
       )}
 
       <button
-        className="w-full min-h-12 px-6 py-3 border-2 rounded-lg text-sm sm:text-base font-semibold smooth-transition hover:shadow-md active:scale-95"
+        onClick={handleLearnMore}
+        className="w-full min-h-12 px-6 py-3 border-2 rounded-lg text-sm sm:text-base font-semibold smooth-transition hover:shadow-md active:scale-95 cursor-pointer"
         style={{
           borderColor: "#0b464f",
           color: "#0b464f",

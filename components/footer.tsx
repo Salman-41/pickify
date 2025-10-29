@@ -87,17 +87,26 @@ export function Footer() {
             </h3>
             <ul className="space-y-1.5 sm:space-y-2 text-xs sm:text-sm text-white/80">
               <li>
-                <Link href="#" className="hover:text-white smooth-transition">
+                <Link
+                  href="/services"
+                  className="hover:text-white smooth-transition"
+                >
                   Store Design
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white smooth-transition">
+                <Link
+                  href="/services"
+                  className="hover:text-white smooth-transition"
+                >
                   Development
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white smooth-transition">
+                <Link
+                  href="/services"
+                  className="hover:text-white smooth-transition"
+                >
                   Optimization
                 </Link>
               </li>
@@ -164,10 +173,13 @@ export function Footer() {
         <div className="border-t border-white/20 pt-6 sm:pt-8 flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-0 text-xs sm:text-sm text-white/80">
           <p>&copy; 2025 Pickify. All rights reserved.</p>
           <div className="flex gap-4 sm:gap-6">
-            <Link href="#" className="hover:text-white smooth-transition">
+            <Link
+              href="/privacy"
+              className="hover:text-white smooth-transition"
+            >
               Privacy
             </Link>
-            <Link href="#" className="hover:text-white smooth-transition">
+            <Link href="/terms" className="hover:text-white smooth-transition">
               Terms
             </Link>
           </div>
