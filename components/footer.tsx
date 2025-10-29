@@ -1,5 +1,11 @@
 import Link from "next/link";
-import { Mail, Linkedin, Twitter, MessageCircle } from "lucide-react";
+import {
+  Mail,
+  Instagram,
+  TrendingUp,
+  Facebook,
+  MessageCircle,
+} from "lucide-react";
 
 /**
  * Footer component with site navigation and social links.
@@ -122,18 +128,34 @@ export function Footer() {
                 <MessageCircle size={20} className="hidden sm:block" />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/pickify_1?igsh=ODNsMzFha21hazRu"
+                title="Follow on Instagram"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-white/80 hover:text-white smooth-transition"
               >
-                <Linkedin size={18} className="sm:hidden" />
-                <Linkedin size={20} className="hidden sm:block" />
+                <Instagram size={18} className="sm:hidden" />
+                <Instagram size={20} className="hidden sm:block" />
               </a>
               <a
-                href="#"
+                href="https://www.tiktok.com/@.pickify?_t=ZS-90x0pVu1VHW&_r=1"
+                title="Follow on TikTok"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-white/80 hover:text-white smooth-transition"
               >
-                <Twitter size={18} className="sm:hidden" />
-                <Twitter size={20} className="hidden sm:block" />
+                <TrendingUp size={18} className="sm:hidden" />
+                <TrendingUp size={20} className="hidden sm:block" />
+              </a>
+              <a
+                href="https://www.facebook.com/share/17HUoeGHQj/"
+                title="Follow on Facebook"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/80 hover:text-white smooth-transition"
+              >
+                <Facebook size={18} className="sm:hidden" />
+                <Facebook size={20} className="hidden sm:block" />
               </a>
             </div>
           </div>

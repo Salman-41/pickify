@@ -2,6 +2,7 @@
 
 import { ArrowRight, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { VariableProximity } from "@/components/variable-proximity";
 import { CountUp } from "@/components/count-up";
 import { ThreadsBg } from "@/components/threads-bg";
@@ -23,6 +24,11 @@ import { ThreadsBg } from "@/components/threads-bg";
  * ```
  */
 export function HeroSection() {
+  const handleGetStarted = () => {
+    const whatsappUrl = `https://wa.me/923700129502?text=Hi%20Pickify!%20I'm%20interested%20in%20your%20Shopify%20design%20and%20development%20services...`;
+    window.open(whatsappUrl, "_blank");
+  };
+
   return (
     <section
       className="relative min-h-screen sm:min-h-[90vh] flex items-center justify-center pt-24 pb-12 sm:pt-20 sm:pb-0"
@@ -162,7 +168,8 @@ export function HeroSection() {
             transition={{ duration: 0.7, delay: 0.6, ease: "easeOut" }}
           >
             <motion.button
-              className="group w-full sm:w-auto px-4 sm:px-8 py-3 sm:py-4 min-h-12 text-sm sm:text-base text-white rounded-lg font-semibold smooth-transition hover:opacity-90 flex items-center justify-center gap-2 shadow-sm hover:shadow-md"
+              onClick={handleGetStarted}
+              className="group w-full sm:w-auto px-4 sm:px-8 py-3 sm:py-4 min-h-12 text-sm sm:text-base text-white rounded-lg font-semibold smooth-transition hover:opacity-90 flex items-center justify-center gap-2 shadow-sm hover:shadow-md cursor-pointer"
               style={{ backgroundColor: "#ab2645" }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -173,17 +180,19 @@ export function HeroSection() {
                 className="group-hover:translate-x-0.5 transition-transform"
               />
             </motion.button>
-            <motion.button
-              className="w-full sm:w-auto px-4 sm:px-8 py-3 sm:py-4 min-h-12 text-sm sm:text-base border-2 rounded-lg font-semibold smooth-transition hover:shadow-md flex items-center justify-center gap-2"
-              style={{
-                borderColor: "#0b464f",
-                color: "#0b464f",
-              }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              View Our Work
-            </motion.button>
+            <Link href="/portfolio">
+              <motion.button
+                className="w-full sm:w-auto px-4 sm:px-8 py-3 sm:py-4 min-h-12 text-sm sm:text-base border-2 rounded-lg font-semibold smooth-transition hover:shadow-md flex items-center justify-center gap-2 cursor-pointer"
+                style={{
+                  borderColor: "#0b464f",
+                  color: "#0b464f",
+                }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                View Our Work
+              </motion.button>
+            </Link>
           </motion.div>
 
           {/* Stats - clean cards with subtle styling */}
